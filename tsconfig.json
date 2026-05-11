@@ -1,0 +1,3 @@
+{
+  "extends": "@selim/config/tsconfig.base.json"
+}
