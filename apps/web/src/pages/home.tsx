@@ -250,7 +250,7 @@ function ServiceBentoCard({
 
 export default function HomePage() {
   return (
-    <main className=" bg-zinc-50 font-sans text-zinc-950 selection:bg-emerald-200 selection:text-emerald-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className=" bg-zinc-50 font-sans text-zinc-950 selection:bg-indigo-200 selection:text-indigo-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Injecting keyframes safely for the marquee without needing tailwind.config.js changes */}
       <style
         dangerouslySetInnerHTML={{
@@ -283,8 +283,22 @@ export default function HomePage() {
 					-ms-overflow-style: none;
 					scrollbar-width: none;
 				}
-				.cases-swiper { padding-bottom: 4.5rem !important; overflow: visible !important; }
-				.cases-swiper .swiper-wrapper { overflow: visible; }
+				.cases-swiper { padding-bottom: 4.5rem !important; overflow: hidden !important; }
+				.cases-swiper .swiper-wrapper { align-items: stretch; }
+				.cases-swiper .swiper-slide { height: auto; display: flex; }
+				.cases-swiper .swiper-slide > article { width: 100%; }
+				@media (min-width: 640px) {
+					.cases-swiper { overflow: visible !important; }
+				}
+				@media (max-width: 639px) {
+					.cases-swiper > .swiper-button-prev,
+					.cases-swiper > .swiper-button-next { display: none !important; }
+					.cases-swiper > .swiper-pagination {
+						left: 50% !important;
+						transform: translateX(-50%);
+						text-align: center !important;
+					}
+				}
 				.cases-swiper > .swiper-button-prev,
 				.cases-swiper > .swiper-button-next {
 					top: auto !important;
@@ -714,7 +728,7 @@ guard.on("threat", (e) => respond(e));`}
 
           <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
-            spaceBetween={24}
+            spaceBetween={16}
             slidesPerView={1}
             loop
             loopAdditionalSlides={3}
@@ -722,9 +736,9 @@ guard.on("threat", (e) => respond(e));`}
             pagination={{ clickable: true }}
             navigation
             breakpoints={{
-              640: { slidesPerView: 1.4 },
-              900: { slidesPerView: 2.2 },
-              1200: { slidesPerView: 3 },
+              640: { slidesPerView: 1.4, spaceBetween: 20 },
+              900: { slidesPerView: 2.2, spaceBetween: 24 },
+              1200: { slidesPerView: 3, spaceBetween: 24 },
             }}
             className="cases-swiper"
           >
