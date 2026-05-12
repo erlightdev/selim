@@ -24,7 +24,7 @@ export default function PageHero({
 	image,
 }: PageHeroProps) {
 	return (
-		<section className="relative overflow-hidden bg-white pt-24 pb-16 text-zinc-900 dark:bg-zinc-950 dark:text-white">
+		<section className="relative overflow-hidden bg-white pt-24 -mt-24 pb-16 rounded-md text-zinc-900 dark:bg-zinc-950 dark:text-white">
 			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(99,102,241,0.15),transparent_50%),radial-gradient(circle_at_80%_50%,rgba(99,102,241,0.1),transparent_60%)]" />
 			<div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
 				<div>
