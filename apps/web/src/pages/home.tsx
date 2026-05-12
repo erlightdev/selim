@@ -20,92 +20,92 @@ import {
 
 // --- DATA ---
 const clientLogos = [
-  "Harbor Ledger",
-  "Northline Health",
-  "Aster Freight",
-  "Fieldnote Labs",
-  "Atlas Meridian",
-  "Copper Row",
+  "Nepali Commercial Bank",
+  "National Insurer",
+  "Govt e-Services",
+  "Himalayan Telecom",
+  "Kathmandu Hospital",
+  "NGO Network",
 ] as const;
 
 const services = [
   {
-    icon: Strategy,
-    title: "Product strategy",
-    text: "Define the first useful release, map the risks, and turn scattered requirements into a buildable plan.",
+    icon: Pulse,
+    title: "SOC as a Service",
+    text: "24/7 SIEM monitoring, threat detection and incident response from our Kathmandu SOC.",
     size: "md:col-span-2 md:row-span-2",
     metric: "01",
-    panel: "Roadmap",
-    stat: "6.4w",
+    panel: "SOC",
+    stat: "24/7",
   },
   {
     icon: CubeFocus,
-    title: "UX architecture",
-    text: "Structure roles, states, permissions, and core flows before visual polish hides product gaps.",
+    title: "VAPT",
+    text: "Vulnerability assessment and penetration testing across web, mobile, network, APIs and cloud.",
     size: "md:col-span-1 md:row-span-1",
     metric: "02",
-    panel: "Flows",
-    stat: "18",
+    panel: "VAPT",
+    stat: "87%",
   },
   {
     icon: Code,
-    title: "Frontend build",
-    text: "Ship React interfaces with tokens, responsive constraints, and real empty, loading, and error states.",
+    title: "Cloud Security",
+    text: "AWS, Azure and GCP posture management — misconfigurations caught before attackers find them.",
     size: "md:col-span-1 md:row-span-1",
     metric: "03",
-    panel: "React",
-    stat: "92%",
+    panel: "Cloud",
+    stat: "3",
   },
   {
     icon: CirclesFour,
-    title: "Design systems",
-    text: "Create components, interaction rules, and usage patterns that scale beyond the first launch.",
+    title: "EDR",
+    text: "Endpoint detection and response — every laptop, server and device watched in real time.",
     size: "md:col-span-1 md:row-span-1",
     metric: "04",
-    panel: "Tokens",
-    stat: "48",
+    panel: "EDR",
+    stat: "99.9%",
   },
   {
     icon: BracketsCurly,
-    title: "Product cleanup",
-    text: "Tighten slow screens, repair hierarchy, and remove decisions that make users hesitate.",
+    title: "GRC & Compliance",
+    text: "ISO 27001, NIA Guideline 2076, PCI-DSS and Nepal Rastra Bank directives — advisory, audit and evidence.",
     size: "md:col-span-2 md:row-span-1",
     metric: "05",
-    panel: "Audit",
-    stat: "31%",
+    panel: "GRC",
+    stat: "100%",
   },
 ] as const;
 
 const cases = [
   {
-    name: "Harbor Ledger",
-    sector: "Fintech",
-    headline: "Stopped 12k credential attacks in week one",
-    metric: "98.4%",
-    metricLabel: "Threats auto-mitigated",
+    name: "Nepali Commercial Bank",
+    sector: "Banking",
+    headline: "87% reduction in critical vulnerabilities in 6 weeks",
+    metric: "87%",
+    metricLabel: "Critical vulns closed",
     summary:
-      "Deployed AI-driven anomaly detection across customer banking endpoints — surfacing fraud rings before payouts cleared.",
-    stack: ["Endpoint AI", "Identity", "SOC"],
+      "Combined SOC, VAPT and GRC engagement aligned the bank with Nepal Rastra Bank directives and hardened core banking systems.",
+    stack: ["SOC", "VAPT", "GRC"],
   },
   {
-    name: "Northline Health",
-    sector: "Healthcare",
-    headline: "HIPAA-grade visibility across 14 clinics",
+    name: "Regional Insurer",
+    sector: "Insurance",
+    headline: "Achieved NIA Guideline 2076 compliance",
+    metric: "2076",
+    metricLabel: "NIA compliant",
+    summary:
+      "Policies, controls and evidence assembled in line with NIA Guideline 2076 — passed audit on first attempt.",
+    stack: ["GRC", "Awareness", "Advisory"],
+  },
+  {
+    name: "Government e-Services",
+    sector: "Public sector",
+    headline: "Hardened against DDoS and credential attacks",
     metric: "24/7",
-    metricLabel: "Live monitoring",
+    metricLabel: "SOC monitoring",
     summary:
-      "Replaced fragmented audit logs with a unified threat surface — every patient record access now traceable in real time.",
-    stack: ["Zero Trust", "Audit", "EDR"],
-  },
-  {
-    name: "Aster Freight",
-    sector: "Logistics",
-    headline: "Ransomware contained before encryption",
-    metric: "<3min",
-    metricLabel: "Mean response",
-    summary:
-      "Behavioral models flagged lateral movement inside the dispatch network and isolated affected nodes automatically.",
-    stack: ["XDR", "Automation", "Forensics"],
+      "Citizen-facing platform now monitored around the clock from our Kathmandu SOC, with DFIR retainer in place.",
+    stack: ["SOC", "Cloud", "DFIR"],
   },
 ] as const;
 
@@ -388,25 +388,26 @@ export default function HomePage() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-300 opacity-75"></span>
                   <span className="relative inline-flex size-2 rounded-full bg-indigo-200"></span>
                 </span>
-                Secure your digital future
+                Nepal's Managed Cyber Security Service Provider
               </div>
 
               <h1 className="max-w-7xl text-balance text-[clamp(2.4rem,9vw,3.2rem)] font-semibold leading-[0.93] tracking-tight text-white">
-                Next-Gen Defense For Modern Threats
+                Your digital world. Watched. Protected. Secured.
               </h1>
 
               <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-indigo-100/74 sm:text-lg">
-                Empowering businesses with AI-driven cybersecurity solutions
-                that detect, prevent, and respond to digital threats — in real
-                time.
+                Selim Solution is Nepal's leading Managed Cyber Security
+                Service Provider — named after the Seim Lake of Humla's Nimi
+                Valley, standing guard over your business like the Himalayas
+                stand over the horizon.
               </p>
 
               <ul className="mt-8 grid w-full max-w-2xl grid-cols-1 gap-3 text-left sm:grid-cols-2">
                 {[
-                  "Smarter Detection",
-                  "24/7 Threat Monitoring",
-                  "Seamless Integration",
-                  "AI-Powered Protection",
+                  "200+ organisations protected",
+                  "24/7/365 SOC monitoring",
+                  "99.9% threat detection accuracy",
+                  "NIA Guideline 2076 advisory",
                 ].map((item) => (
                   <li
                     key={item}
@@ -426,14 +427,14 @@ export default function HomePage() {
                   href="/contact"
                   className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-[#151032] shadow-[0_20px_60px_-28px_rgba(255,255,255,0.75)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-50 active:translate-y-0 sm:w-auto"
                 >
-                  Get Protected Now
+                  Get a Free Security Assessment
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
-                  href="/case-studies"
+                  href="/services"
                   className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/16 bg-white/8 px-6 text-sm font-semibold text-white backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/12 active:translate-y-0 sm:w-auto"
                 >
-                  Explore Solutions
+                  Explore Our Services
                   <ShieldCheck className="size-4" weight="bold" />
                 </a>
               </div>
@@ -470,7 +471,7 @@ export default function HomePage() {
           </div>
 
           <h2 className="mx-auto mt-5 max-w-6xl text-balance text-[clamp(1.8rem,9vw,2.7rem)] font-medium leading-[1.08] tracking-tight">
-            We are a cybersecurity team building AI-driven threat detection,{" "}
+            Born in the Himalayas. Built for Nepal. Selim Solution delivers managed cyber security with{" "}
             <span className="inline-flex size-8 translate-y-1 items-center justify-center rounded-lg bg-indigo-100 shadow-[inset_0_0_0_1px_rgba(79,70,229,0.18)] sm:size-10">
               <ShieldCheck
                 className="size-4 text-indigo-500 sm:size-5"
@@ -484,7 +485,7 @@ export default function HomePage() {
                 weight="duotone"
               />
             </span>{" "}
-            and real-time response that keeps modern businesses{" "}
+            and rapid incident response that keeps Nepali organisations{" "}
             <span className="inline-flex size-8 translate-y-1 items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 via-indigo-200 to-sky-100 sm:size-10">
               <Lightning
                 className="size-4 text-indigo-500 sm:size-5"
@@ -505,11 +506,10 @@ export default function HomePage() {
                 Capabilities
               </h2>
               <p className="mt-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-                A unified shield for modern threats.
+                Seven services. One vigilant team.
               </p>
               <p className="mt-4 text-lg text-zinc-600 dark:text-indigo-100/65">
-                AI-driven detection, real-time response, and seamless integration
-                across every layer of your stack.
+                SOC, VAPT, Cloud, EDR, GRC, DFIR and Security Awareness Training — delivered 24/7 from our Kathmandu SOC.
               </p>
             </div>
             <a
@@ -537,7 +537,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="mt-8 text-center text-sm font-medium text-zinc-700 dark:text-indigo-100/75">
-                  Zero-trust core
+                  Vigilant. Resilient. Nepali.
                 </p>
               </div>
             </article>
@@ -550,7 +550,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700 dark:border-white/10 dark:bg-white/5 dark:text-indigo-200">
                     <span className="size-1.5 rounded-full bg-indigo-500" />
-                    Threat Engine
+                    SOC Engine
                   </div>
                   <Code
                     className="size-5 text-zinc-400 dark:text-indigo-200/50"
@@ -565,11 +565,11 @@ export default function HomePage() {
                     <span className="size-2.5 rounded-full bg-emerald-400/70" />
                   </div>
                   <pre className="whitespace-pre-wrap text-zinc-700 dark:text-indigo-100/80">
-{`const guard = ai.detect({
-  signals: ["network", "endpoint"],
-  policy: "zero-trust",
+{`const selim = soc.watch({
+  signals: ["siem", "endpoint", "cloud"],
+  region: "np-kathmandu",
 });
-guard.on("threat", (e) => respond(e));`}
+selim.on("incident", (e) => respond(e));`}
                   </pre>
                 </div>
 
@@ -579,7 +579,7 @@ guard.on("threat", (e) => respond(e));`}
                     weight="fill"
                   />
                   <span className="text-sm text-zinc-600 dark:text-indigo-100/70">
-                    AI policies enforced at the edge
+                    Detections tuned to NIA 2076 and NRB directives
                   </span>
                 </div>
               </div>
@@ -594,12 +594,12 @@ guard.on("threat", (e) => respond(e));`}
                   Live
                 </div>
                 <h3 className="mt-6 text-2xl font-semibold leading-tight tracking-tight text-zinc-950 dark:text-white">
-                  Real-time global
-                  <br /> cyber threat tracking
+                  24/7 SOC
+                  <br /> from Kathmandu
                 </h3>
                 <p className="mt-3 text-sm text-zinc-600 dark:text-indigo-100/65">
-                  Monitor anomalies across regions, endpoints, and identities
-                  the moment they emerge.
+                  Local analysts, global tooling. Watching every endpoint,
+                  identity and cloud workload the moment it shifts.
                 </p>
 
                 {/* Globe-like dot grid */}
@@ -626,14 +626,14 @@ guard.on("threat", (e) => respond(e));`}
               <div className="relative flex h-full flex-col justify-between p-6 sm:p-8">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-indigo-200/60">
-                    Detection
+                    Detection accuracy
                   </p>
                   <p className="mt-4 text-6xl font-semibold tracking-tight text-zinc-950 dark:text-white">
-                    99.8<span className="text-indigo-500">%</span>
+                    99.9<span className="text-indigo-500">%</span>
                   </p>
                 </div>
                 <p className="text-sm text-zinc-600 dark:text-indigo-100/65">
-                  Of known and zero-day threats neutralized before payload.
+                  Threats detected before payload across 200+ Nepali organisations.
                 </p>
               </div>
             </article>
@@ -648,7 +648,7 @@ guard.on("threat", (e) => respond(e));`}
                     weight="duotone"
                   />
                   <span className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-indigo-200/60">
-                    AI Monitoring
+                    SOC Pulse
                   </span>
                 </div>
                 <svg
@@ -664,7 +664,7 @@ guard.on("threat", (e) => respond(e));`}
                   <path d="M0 40 L25 40 L35 20 L45 50 L55 30 L70 30 L80 10 L90 50 L105 30 L120 30 L130 24 L145 40 L200 40" />
                 </svg>
                 <p className="text-sm text-zinc-600 dark:text-indigo-100/65">
-                  24/7 behavioral signals across users, devices, and workloads.
+                  24/7 SIEM signals across users, devices and Nepali cloud workloads.
                 </p>
               </div>
             </article>
@@ -679,17 +679,25 @@ guard.on("threat", (e) => respond(e));`}
                     Get started
                   </p>
                   <h3 className="mt-3 text-2xl font-semibold leading-tight tracking-tight">
-                    Deploy in minutes.
-                    <br /> Protect for years.
+                    Ready to secure your organisation?
+                    <br /> Start with a free consultation.
                   </h3>
                 </div>
-                <a
-                  href="/contact"
-                  className="mt-6 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-white px-5 text-sm font-semibold text-indigo-700 transition-transform hover:-translate-y-0.5"
-                >
-                  Start free trial
-                  <ArrowRight className="size-4" />
-                </a>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href="/contact"
+                    className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-white px-5 text-sm font-semibold text-indigo-700 transition-transform hover:-translate-y-0.5"
+                  >
+                    Book a Call
+                    <ArrowRight className="size-4" />
+                  </a>
+                  <a
+                    href="/contact"
+                    className="inline-flex h-11 w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 text-sm font-semibold text-white backdrop-blur transition-transform hover:-translate-y-0.5"
+                  >
+                    Download Company Profile
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -706,11 +714,11 @@ guard.on("threat", (e) => respond(e));`}
                 Case studies
               </div>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-white">
-                Real attacks. Real outcomes.
+                Real threats. Real Nepali organisations. Real outcomes.
               </h2>
               <p className="mt-4 text-lg text-zinc-600 dark:text-indigo-100/65">
-                How teams use our platform to detect, contain, and respond
-                before damage is done.
+                How banks, insurers and government platforms across Nepal use
+                Selim Solution to detect, contain and respond.
               </p>
             </div>
             <a
@@ -794,19 +802,20 @@ guard.on("threat", (e) => respond(e));`}
                 Defense stack
               </div>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
-                Every layer fortified, end-to-end.
+                Clarity from the highest ground.
               </h2>
               <p className="mt-4 text-lg text-zinc-600 dark:text-indigo-100/65">
-                Built on enterprise-grade primitives — AI threat models,
-                zero-trust identity, and continuous response — all integrated
-                into a single platform your team can actually operate.
+                Selim Solution takes its name from Seim Lake in Humla's Nimi
+                Valley — Nepal's far-western Himalayas. Like that lake at
+                altitude, our SOC keeps watch over your business with
+                high-altitude clarity, vigilance and resilience.
               </p>
 
               <ul className="mt-8 space-y-3">
                 {[
-                  "SOC 2 Type II & ISO 27001 certified",
-                  "Deploys in cloud, on-prem, or hybrid",
-                  "Open APIs for every existing tool",
+                  "ISO 27001 & NIA Guideline 2076 advisory",
+                  "Kathmandu SOC, 24/7/365 coverage",
+                  "Local team, global tooling",
                 ].map((item) => (
                   <li
                     key={item}
@@ -824,15 +833,15 @@ guard.on("threat", (e) => respond(e));`}
 
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {[
-                { icon: ShieldCheck, label: "Zero Trust" },
-                { icon: Lightning, label: "Auto Response" },
-                { icon: Pulse, label: "EDR / XDR" },
-                { icon: CubeFocus, label: "Identity" },
-                { icon: FlowArrow, label: "SIEM Sync" },
-                { icon: Sparkle, label: "AI Models" },
-                { icon: Code, label: "Open APIs" },
-                { icon: CirclesFour, label: "Cloud Native" },
-                { icon: Strategy, label: "SOC Tools" },
+                { icon: Pulse, label: "SOC as a Service" },
+                { icon: ShieldCheck, label: "VAPT" },
+                { icon: BracketsCurly, label: "Cloud Security" },
+                { icon: Lightning, label: "EDR" },
+                { icon: CubeFocus, label: "GRC" },
+                { icon: FlowArrow, label: "DFIR" },
+                { icon: Sparkle, label: "Awareness Training" },
+                { icon: Code, label: "NIA 2076" },
+                { icon: Strategy, label: "ISO 27001" },
               ].map(({ icon: Icon, label }) => (
                 <div
                   key={label}
@@ -865,11 +874,11 @@ guard.on("threat", (e) => respond(e));`}
                 Insights
               </div>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-white">
-                Threat intelligence from the frontline.
+                Threat intelligence, Nepal-first.
               </h2>
               <p className="mt-4 text-lg text-zinc-600 dark:text-indigo-100/65">
-                Research, breakdowns, and field notes from our security
-                operations team.
+                Research, regulatory breakdowns and field notes from our
+                Kathmandu SOC team.
               </p>
             </div>
             <a
@@ -884,38 +893,38 @@ guard.on("threat", (e) => respond(e));`}
           <div className="grid gap-6 lg:grid-cols-3">
             {[
               {
-                tag: "Threat Research",
+                tag: "NIA 2076",
                 date: "May 8, 2026",
                 readTime: "6 min read",
                 title:
-                  "Inside the rise of AI-assisted credential stuffing attacks",
+                  "What NIA Guideline 2076 really expects from Nepali insurers",
                 excerpt:
-                  "How attackers are using LLMs to bypass legacy rate-limiting — and the behavioral signals that still catch them.",
+                  "A practical walk-through of the controls our GRC team uses to get insurance clients audit-ready in 90 days.",
                 gradient:
                   "from-indigo-500/80 via-indigo-600/70 to-purple-600/80",
                 icon: ShieldCheck,
                 featured: true,
               },
               {
-                tag: "Zero Trust",
+                tag: "NRB Directives",
                 date: "April 24, 2026",
                 readTime: "4 min read",
                 title:
-                  "Why your identity provider is the new perimeter",
+                  "Nepal Rastra Bank IT directives: a VAPT checklist",
                 excerpt:
-                  "Identity-first security isn't a buzzword. It's the layer attackers target first when everything else is locked down.",
+                  "What every Nepali commercial bank should be testing before its next NRB audit — straight from our engagements.",
                 gradient: "from-sky-500/70 via-indigo-500/70 to-indigo-700/80",
                 icon: CubeFocus,
                 featured: false,
               },
               {
-                tag: "Incident Response",
+                tag: "DFIR",
                 date: "April 11, 2026",
                 readTime: "5 min read",
                 title:
-                  "Ransomware in 90 seconds: a containment playbook",
+                  "Ransomware in 90 seconds: a DFIR playbook for Nepal",
                 excerpt:
-                  "A breakdown of the auto-response patterns that stopped a payload mid-encryption inside a logistics network.",
+                  "How our DFIR team contained a payload mid-encryption inside a Kathmandu enterprise network.",
                 gradient:
                   "from-indigo-600/80 via-fuchsia-500/60 to-indigo-500/70",
                 icon: Lightning,
@@ -992,19 +1001,19 @@ guard.on("threat", (e) => respond(e));`}
               </div>
 
               <h2 className="mt-6 text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                Stop reacting to threats.
-                <br /> Start preventing them.
+                Ready to secure
+                <br /> your organisation?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-indigo-100/70 sm:text-lg">
-                Deploy AI-driven defense across every endpoint, identity, and
-                workload — in minutes, not months.
+                Start with a free consultation. Our Kathmandu team will map
+                your risks and walk you through the right MSSP services.
               </p>
 
               <ul className="mt-8 flex flex-col gap-3 sm:items-center lg:items-start">
                 {[
-                  "AI-powered threat detection in real time",
-                  "Zero-trust policies across every layer",
-                  "24/7 monitoring with automated response",
+                  "24/7 SOC monitoring from Kathmandu",
+                  "VAPT, EDR, Cloud and DFIR on demand",
+                  "ISO 27001, NIA 2076 and NRB-aligned advisory",
                 ].map((item) => (
                   <li
                     key={item}
@@ -1025,27 +1034,27 @@ guard.on("threat", (e) => respond(e));`}
                 href="/contact"
                 className="group inline-flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-white px-8 text-base font-semibold text-[#151032] shadow-[0_20px_60px_-24px_rgba(255,255,255,0.7)] transition-all hover:-translate-y-0.5 hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-[#08051f]"
               >
-                Get Protected Now
+                Book a Call
                 <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="/contact"
                 className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/10"
               >
-                Talk to security expert
+                Download Company Profile
                 <FlowArrow className="size-5" />
               </a>
               <div className="mt-2 flex justify-center gap-5 text-sm text-indigo-100/60">
                 <span className="flex items-center gap-1.5">
                   <Lightning weight="fill" className="size-4 text-indigo-300" />
-                  Deploys in minutes
+                  Kathmandu, Nepal
                 </span>
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck
                     weight="fill"
                     className="size-4 text-indigo-300"
                   />
-                  SOC 2 certified
+                  ISO 27001 advisory
                 </span>
               </div>
             </div>

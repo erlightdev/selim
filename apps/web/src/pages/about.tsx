@@ -16,96 +16,76 @@ import {
 } from "@phosphor-icons/react";
 
 const stats = [
-	{ value: "12k+", label: "Threats neutralized weekly" },
-	{ value: "<3min", label: "Mean response time" },
-	{ value: "98.4%", label: "Auto-mitigation rate" },
-	{ value: "24/7", label: "SOC monitoring" },
+	{ value: "200+", label: "Organisations protected" },
+	{ value: "99.9%", label: "Threat detection accuracy" },
+	{ value: "24/7", label: "Kathmandu SOC" },
+	{ value: "2076", label: "NIA Guideline advisory" },
 ] as const;
 
 const values = [
 	{
+		icon: Eye,
+		title: "Vigilance",
+		text: "We watch what others miss — round the clock, across endpoints, identities, cloud and people.",
+	},
+	{
+		icon: Compass,
+		title: "Clarity",
+		text: "High-altitude perspective. Plain reports. Decisions your board can act on, not jargon.",
+	},
+	{
 		icon: ShieldCheck,
-		title: "Defense by default",
-		text: "Zero-trust assumptions across every endpoint, identity, and workload — no implicit access, ever.",
+		title: "Integrity",
+		text: "Honest scopes, honest findings, honest pricing. No fear-selling, no theatre.",
+	},
+	{
+		icon: Sparkle,
+		title: "Local Pride",
+		text: "Born in Nepal, named after Seim Lake in Humla. Built to defend Nepali organisations first.",
 	},
 	{
 		icon: Brain,
-		title: "AI that explains itself",
-		text: "Models surface the signal, not the noise. Every detection ships with the evidence behind it.",
-	},
-	{
-		icon: Lightning,
-		title: "Response in seconds",
-		text: "Automated containment runs before the on-call pager fires. Humans verify, machines act.",
+		title: "Resilience",
+		text: "From altitude to attack: we engineer systems — and teams — to stand back up faster than they fall.",
 	},
 ] as const;
 
 const capabilities = [
-	{ icon: Eye, label: "Threat detection" },
-	{ icon: ShieldCheck, label: "Zero-trust identity" },
-	{ icon: Pulse, label: "Endpoint EDR / XDR" },
-	{ icon: BracketsCurly, label: "Cloud workload security" },
-	{ icon: CubeFocus, label: "SIEM & SOC ops" },
-	{ icon: Sparkle, label: "AI anomaly modeling" },
+	{ icon: Pulse, label: "SOC as a Service" },
+	{ icon: Eye, label: "VAPT" },
+	{ icon: BracketsCurly, label: "Cloud Security" },
+	{ icon: Lightning, label: "EDR" },
+	{ icon: CubeFocus, label: "GRC & Compliance" },
+	{ icon: ShieldCheck, label: "DFIR" },
 ] as const;
 
 const principles = [
 	{
 		icon: Strategy,
-		title: "Prevention over reaction",
-		text: "We design for the threat that hasn't fired yet — behavior models, not signature databases.",
+		title: "Prevention before reaction",
+		text: "We design for the threat before it fires — VAPT, hardening and awareness training tuned to Nepal's threat landscape.",
 	},
 	{
 		icon: Compass,
-		title: "Coverage you can audit",
-		text: "Every policy, decision, and automated action is logged in a surface your auditors can read.",
+		title: "Compliance you can defend",
+		text: "ISO 27001, NIA Guideline 2076, PCI-DSS and Nepal Rastra Bank directives — evidence ready for any auditor.",
 	},
 	{
 		icon: Lightning,
-		title: "Minutes to deploy",
-		text: "Agents install in minutes, integrate with your existing stack, and start protecting on day one.",
+		title: "Local team, global tooling",
+		text: "Kathmandu-based analysts, world-class SIEM, EDR and cloud security stacks. Local time-zone, local language, local trust.",
 	},
 ] as const;
 
-const milestones = [
-	{
-		year: "2019",
-		label:
-			"Founded by SOC engineers tired of chasing alerts that arrived too late.",
-	},
-	{
-		year: "2021",
-		label:
-			"Shipped the first AI behavioral engine — caught lateral movement no signature tool flagged.",
-	},
-	{
-		year: "2023",
-		label:
-			"SOC 2 Type II certified. Deployed across regulated fintech and healthcare networks.",
-	},
-	{
-		year: "2025",
-		label:
-			"Unified XDR platform launched — identity, endpoint, and workload on one threat surface.",
-	},
-] as const;
-
-const leadership = [
-	{
-		name: "Mara Voss",
-		role: "Co-founder & CEO",
-		bio: "Former SOC lead at a top-5 bank. 14 years incident response.",
-	},
-	{
-		name: "Ren Ito",
-		role: "Co-founder & CTO",
-		bio: "Built behavioral detection systems for two threat intel platforms.",
-	},
-	{
-		name: "Talia Brenner",
-		role: "Head of Security Research",
-		bio: "Red-team operator, published on identity-layer attacks and AI evasion.",
-	},
+const certifications = [
+	"CISSP",
+	"CISM",
+	"CEH",
+	"ISO 27001 Lead Auditor / Lead Implementer",
+	"CompTIA Security+",
+	"CCNA / CCNP Security",
+	"AWS Security Specialty",
+	"Azure Security Specialty",
 ] as const;
 
 export default function AboutPage() {
@@ -142,16 +122,17 @@ export default function AboutPage() {
 									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-300 opacity-75" />
 									<span className="relative inline-flex size-2 rounded-full bg-indigo-200" />
 								</span>
-								About the company
+								About Selim Solution
 							</div>
 							<h1 className="text-balance text-[clamp(2.2rem,8vw,3.4rem)] font-semibold leading-[0.95] tracking-tight">
-								Built by defenders, for the threats <br className="hidden sm:block" />
-								that haven't fired yet.
+								Clarity from the <br className="hidden sm:block" />
+								highest ground.
 							</h1>
 							<p className="mx-auto mt-7 max-w-2xl text-pretty text-base leading-7 text-indigo-100/75 sm:text-lg">
-								We are a cybersecurity team building AI-driven detection, zero-trust
-								enforcement, and automated response — so security stops being the
-								thing that slows your team down.
+								Selim Solution is Nepal's Managed Cyber Security Service Provider,
+								named after Seim Lake in Humla's Nimi Valley — the far-western
+								Himalayas bordering Tibet. From that altitude, we watch over
+								Nepal's digital frontier.
 							</p>
 
 							<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -159,7 +140,7 @@ export default function AboutPage() {
 									href="/contact"
 									className="group inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-[#151032] shadow-[0_20px_60px_-28px_rgba(255,255,255,0.75)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-50"
 								>
-									Talk to the team
+									Talk to our SOC team
 									<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
 								</a>
 								<a
@@ -197,16 +178,24 @@ export default function AboutPage() {
 					<div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
 						<div>
 							<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
-								Our mission
+								Our story
 							</div>
 							<h2 className="mt-5 text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
-								Make modern defense feel obvious — not optional.
+								Named after a lake. Built for a nation.
 							</h2>
 							<p className="mt-6 max-w-xl text-base leading-7 text-zinc-600 dark:text-indigo-100/70">
-								Most security stacks were built to react. We build to prevent. Our
-								platform unifies endpoint, identity, and cloud workloads into one
-								surface that AI watches continuously — so threats get contained
-								before they become incidents.
+								High in Humla's Nimi Valley, on the far-western edge of Nepal where
+								the Himalayas meet Tibet, lies Seim Lake — a body of glacial water
+								that has watched the region for millennia. Clear, still, and
+								impossibly high, Seim Lake is a place of vigilance, of perspective,
+								and of the kind of quiet resilience that only altitude teaches.
+							</p>
+							<p className="mt-4 max-w-xl text-base leading-7 text-zinc-600 dark:text-indigo-100/70">
+								Selim Solution carries that name forward. We are Nepal's Managed
+								Cyber Security Service Provider — a Kathmandu-based team that stands
+								guard over the digital lives of banks, insurers, government bodies,
+								telecoms, hospitals and NGOs. From the highest ground, we keep
+								watch — so when threats rise, our clients stand resilient.
 							</p>
 						</div>
 
@@ -245,11 +234,11 @@ export default function AboutPage() {
 							Capabilities
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							A single surface for every layer of defense.
+							The seven services we deliver.
 						</h2>
 						<p className="mt-5 text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
-							From the endpoint to the cloud workload, every signal funnels into
-							one correlated view your team can actually act on.
+							SOC, VAPT, Cloud, EDR, GRC, DFIR and Security Awareness Training — one
+							Kathmandu team, one accountable partner, one vigilant watch.
 						</p>
 					</div>
 
@@ -314,8 +303,8 @@ export default function AboutPage() {
 				</div>
 			</section>
 
-			{/* 6. TIMELINE */}
-			<section className="bg-zinc-50 py-20 sm:py-24 dark:bg-[#06041a]">
+			{/* 6. CERTIFICATIONS */}
+			<section id="certifications" className="bg-zinc-50 py-20 sm:py-24 dark:bg-[#06041a]">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
 						<div>
@@ -325,76 +314,55 @@ export default function AboutPage() {
 									weight="duotone"
 								/>
 								<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
-									Timeline
+									Certifications
 								</div>
 							</div>
 							<h2 className="mt-5 max-w-md text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-								Six years of staying ahead of the attacker.
+								Credentials our team carries.
 							</h2>
 							<p className="mt-5 max-w-md text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
-								The platform has evolved with the threat landscape — every release
-								shaped by what we caught in production.
+								Selim Solution's engineers hold internationally recognised
+								certifications across security operations, audit, cloud and
+								penetration testing.
 							</p>
 						</div>
 
-						<ol className="relative space-y-6 border-l border-zinc-200 pl-6 dark:border-white/10">
-							{milestones.map((m) => (
-								<li key={m.year} className="relative">
-									<span className="absolute -left-[1.7rem] top-1 inline-flex size-3 items-center justify-center rounded-full border-2 border-indigo-500 bg-white dark:bg-[#0d092d]" />
-									<div className="rounded-2xl border border-zinc-200 bg-white p-5 dark:border-white/10 dark:bg-[#0d092d]">
-										<p className="font-mono text-sm font-semibold text-indigo-600 dark:text-indigo-300">
-											{m.year}
-										</p>
-										<p className="mt-2 text-sm leading-relaxed text-zinc-700 dark:text-indigo-100/75">
-											{m.label}
-										</p>
-									</div>
+						<ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+							{certifications.map((c) => (
+								<li
+									key={c}
+									className="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-4 dark:border-white/10 dark:bg-[#0d092d]"
+								>
+									<span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg border border-indigo-200/70 bg-indigo-50 text-indigo-600 dark:border-white/10 dark:bg-white/8 dark:text-indigo-200">
+										<ShieldCheck className="size-4" weight="duotone" />
+									</span>
+									<span className="text-sm font-medium text-zinc-800 dark:text-indigo-50/90">
+										{c}
+									</span>
 								</li>
 							))}
-						</ol>
+						</ul>
 					</div>
 				</div>
 			</section>
 
-			{/* 7. LEADERSHIP */}
+			{/* 7. TEAM */}
 			<section className="bg-white py-20 sm:py-24 dark:bg-zinc-950">
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl text-center">
 						<div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
 							<Users className="size-3.5" weight="duotone" />
-							Leadership
+							Our team
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							A small team of operators who've been on the other end of the alert.
+							Kathmandu-based analysts, auditors and ethical hackers.
 						</h2>
-					</div>
-
-					<div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-						{leadership.map((person) => (
-							<article
-								key={person.name}
-								className="group relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_30px_80px_-50px_rgba(79,70,229,0.6)] dark:border-white/10 dark:bg-[#0d092d] dark:hover:border-indigo-400/30"
-							>
-								<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_0%,rgba(79,70,229,0.14),transparent_45%)]" />
-								<div className="relative">
-									<div className="flex size-14 items-center justify-center rounded-2xl border border-indigo-200/70 bg-indigo-50 text-lg font-semibold text-indigo-600 dark:border-white/10 dark:bg-white/8 dark:text-indigo-200">
-										{person.name
-											.split(" ")
-											.map((n) => n[0])
-											.join("")}
-									</div>
-									<h3 className="mt-5 text-lg font-semibold tracking-tight">
-										{person.name}
-									</h3>
-									<p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-300">
-										{person.role}
-									</p>
-									<p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-indigo-100/65">
-										{person.bio}
-									</p>
-								</div>
-							</article>
-						))}
+						<p className="mt-5 text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
+							Selim Solution is staffed by Nepali security professionals with deep
+							experience defending banks, insurers, government platforms and
+							critical infrastructure. We operate around the clock from Kathmandu —
+							so when an incident fires, a human picks up.
+						</p>
 					</div>
 				</div>
 			</section>
@@ -408,18 +376,18 @@ export default function AboutPage() {
 
 					<div className="relative mx-auto max-w-3xl text-center">
 						<h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-							Ready to see your environment through our lens?
+							Ready to see your organisation through our lens?
 						</h2>
 						<p className="mx-auto mt-5 max-w-xl text-base leading-7 text-indigo-100/70 sm:text-lg">
-							Book a 20-minute walkthrough. We'll map your current coverage gaps
-							and show what AI-driven defense looks like in your stack.
+							Book a free 30-minute consultation. Our Kathmandu team will map your
+							risks and show how Selim Solution stands watch.
 						</p>
 
 						<ul className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6">
 							{[
-								"No commitment",
-								"Deploys in minutes",
-								"SOC 2 Type II",
+								"Free assessment",
+								"24/7 SOC, Kathmandu",
+								"NIA 2076 advisory",
 							].map((item) => (
 								<li
 									key={item}
@@ -439,14 +407,14 @@ export default function AboutPage() {
 								href="/contact"
 								className="group inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-7 text-sm font-semibold text-[#151032] shadow-[0_20px_60px_-24px_rgba(255,255,255,0.7)] transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
 							>
-								Get Protected Now
+								Get Free Assessment
 								<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
 							</a>
 							<a
 								href="/case-studies"
 								className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 text-sm font-semibold text-white backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/10"
 							>
-								Read customer stories
+								Read case studies
 								<ShieldCheck className="size-4" weight="bold" />
 							</a>
 						</div>

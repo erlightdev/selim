@@ -13,76 +13,78 @@ import {
 	Sparkle,
 } from "@phosphor-icons/react";
 
-const CONTACT_EMAIL = "hello@selim.security";
-const CONTACT_PHONE = "+1 (415) 555-0142";
+const CONTACT_EMAIL = "info@selimsolution.com";
+const CONTACT_PHONE = "+977 (24/7 hotline)";
 
 const contactMethods = [
 	{
 		icon: EnvelopeSimple,
-		label: "Email the team",
+		label: "Email us",
 		value: CONTACT_EMAIL,
 		href: `mailto:${CONTACT_EMAIL}`,
 		hint: "Reply within 4 business hours.",
 	},
 	{
 		icon: CalendarDots,
-		label: "Book a walkthrough",
-		value: "20-minute live demo",
-		href: `mailto:${CONTACT_EMAIL}?subject=Demo%20request`,
-		hint: "See the platform on your stack.",
+		label: "Free assessment",
+		value: "30-minute consultation",
+		href: `mailto:${CONTACT_EMAIL}?subject=Free%20Assessment`,
+		hint: "We map your risks, you decide next steps.",
 	},
 	{
 		icon: Headset,
-		label: "Incident response",
-		value: "24/7 SOC hotline",
-		href: `tel:${CONTACT_PHONE.replace(/\s|\(|\)|-/g, "")}`,
-		hint: "Active breach? Call immediately.",
+		label: "24/7 incident hotline",
+		value: CONTACT_PHONE,
+		href: "tel:+977",
+		hint: "Active breach? Call immediately. WhatsApp / Viber too.",
 	},
 ] as const;
 
 const interests = [
-	"Endpoint EDR / XDR",
-	"Zero-trust identity",
-	"Cloud workload security",
-	"AI threat detection",
-	"SOC / SIEM ops",
-	"Compliance & audit",
+	"SOC as a Service",
+	"VAPT",
+	"Cloud Security",
+	"EDR",
+	"GRC & Compliance",
+	"DFIR",
+	"Security Awareness Training",
+	"Other",
 ] as const;
 
 const responsePromises = [
 	{
 		icon: Clock,
 		title: "4-hour response SLA",
-		text: "Business hours. After-hours incidents route to the on-call SOC engineer.",
+		text: "Business hours. After-hours incidents route to our on-call SOC engineer in Kathmandu.",
 	},
 	{
 		icon: ShieldCheck,
-		title: "NDA on first reply",
-		text: "Mutual NDA available before any environment details are shared.",
+		title: "NDA on request",
+		text: "Mutual NDA available before any environment or scoping details are shared.",
 	},
 	{
 		icon: Lightning,
-		title: "POC in days, not quarters",
-		text: "Most pilots are scoped, deployed, and producing signal inside two weeks.",
+		title: "WhatsApp / Viber friendly",
+		text: "If your team prefers Viber or WhatsApp for incident response, we work that way too.",
 	},
 ] as const;
 
 const faqs = [
 	{
-		q: "How fast can we deploy?",
-		a: "Agents install in minutes. Most teams see their first correlated detections inside the first hour.",
+		q: "Where is Selim Solution based?",
+		a: "Kathmandu, Nepal. Our SOC operates 24/7/365 from here.",
 	},
 	{
-		q: "Do you replace our existing SIEM?",
-		a: "No — we integrate with Splunk, Sentinel, Chronicle, and others. You keep the system of record, we add the AI layer.",
+		q: "Which industries do you serve?",
+		a: "Banking, insurance, government, telecom, healthcare, education and NGOs across Nepal.",
 	},
 	{
-		q: "Is the platform SOC 2 certified?",
-		a: "Yes — SOC 2 Type II, ISO 27001, and HIPAA-ready deployments available.",
+		q: "Which compliance frameworks do you cover?",
+		a: "ISO 27001, NIA Guideline 2076, PCI-DSS, NIST CSF and Nepal Rastra Bank IT directives.",
 	},
 	{
-		q: "Pricing model?",
-		a: "Annual per-endpoint with volume tiers. Pilots are scoped flat-rate so cost is predictable upfront.",
+		q: "Do you provide emergency incident response?",
+		a: "Yes — our 24/7 hotline is staffed for DFIR engagements. Call, WhatsApp or Viber to start.",
 	},
 ] as const;
 
@@ -126,23 +128,23 @@ export default function ContactPage() {
 									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-300 opacity-75" />
 									<span className="relative inline-flex size-2 rounded-full bg-indigo-200" />
 								</span>
-								Security team online — replies in hours
+								Kathmandu SOC online — 24/7
 							</div>
 							<h1 className="text-balance text-[clamp(2.2rem,8vw,3.4rem)] font-semibold leading-[0.95] tracking-tight">
-								Talk to a security engineer.
+								Talk to our SOC team.
 								<br className="hidden sm:block" /> Not a sales sequence.
 							</h1>
 							<p className="mx-auto mt-7 max-w-2xl text-pretty text-base leading-7 text-indigo-100/75 sm:text-lg">
-								Share what you're trying to protect, what's already in place, and
-								where the gaps feel widest. You'll get a real response with
-								specific next steps.
+								Tell us about your organisation, what you're protecting and what's
+								already in place. We typically respond within 4 business hours — and
+								our 24/7 incident hotline is always live.
 							</p>
 
 							<div className="mt-10 grid w-full max-w-3xl grid-cols-1 gap-3 text-left sm:mx-auto sm:grid-cols-3">
 								{[
-									{ icon: Clock, label: "4-hour SLA" },
+									{ icon: Clock, label: "4-hour response SLA" },
 									{ icon: ShieldCheck, label: "Mutual NDA on request" },
-									{ icon: Lightning, label: "POC in 2 weeks" },
+									{ icon: Lightning, label: "WhatsApp / Viber friendly" },
 								].map(({ icon: Icon, label }) => (
 									<div
 										key={label}
@@ -211,11 +213,12 @@ export default function ContactPage() {
 										weight="duotone"
 									/>
 									<h2 className="text-xl font-semibold tracking-tight">
-										Send us the details
+										Tell us about your organisation
 									</h2>
 								</div>
 								<p className="mt-2 text-sm text-zinc-600 dark:text-indigo-100/65">
-									The more concrete the context, the sharper the first response.
+									We respond to every enquiry within 4 business hours. Active
+									incidents — call our 24/7 hotline.
 								</p>
 
 								<div className="mt-7 grid gap-5 sm:grid-cols-2">
@@ -249,70 +252,70 @@ export default function ContactPage() {
 								<div className="mt-5 grid gap-5 sm:grid-cols-2">
 									<div className={fieldShell}>
 										<label htmlFor="company" className={labelClass}>
-											Company
+											Organisation
 										</label>
 										<input
 											id="company"
 											name="company"
-											placeholder="Acme Inc."
+											placeholder="Your bank, insurer, ministry, NGO"
 											className={inputClass}
 										/>
 									</div>
 									<div className={fieldShell}>
-										<label htmlFor="size" className={labelClass}>
-											Organization size
+										<label htmlFor="phone" className={labelClass}>
+											Phone / WhatsApp / Viber
+										</label>
+										<input
+											id="phone"
+											name="phone"
+											type="tel"
+											placeholder="+977 ..."
+											className={inputClass}
+										/>
+									</div>
+								</div>
+
+								<div className="mt-5 grid gap-5 sm:grid-cols-2">
+									<div className={fieldShell}>
+										<label htmlFor="service" className={labelClass}>
+											Service of interest
 										</label>
 										<select
-											id="size"
-											name="size"
+											id="service"
+											name="service"
 											defaultValue=""
 											className={inputClass}
 										>
 											<option disabled value="">
-												Select range
+												Select a service
 											</option>
-											<option>1 – 50 employees</option>
-											<option>51 – 250 employees</option>
-											<option>251 – 1,000 employees</option>
-											<option>1,000+ employees</option>
+											{interests.map((item) => (
+												<option key={item}>{item}</option>
+											))}
 										</select>
+									</div>
+									<div className={fieldShell}>
+										<label htmlFor="referral" className={labelClass}>
+											How did you hear about us?
+										</label>
+										<input
+											id="referral"
+											name="referral"
+											placeholder="Referral, search, event, LinkedIn..."
+											className={inputClass}
+										/>
 									</div>
 								</div>
 
-								<fieldset className="mt-7">
-									<legend className={labelClass}>What's on your radar?</legend>
-									<p className="mt-1 text-xs text-zinc-500 dark:text-indigo-100/45">
-										Pick anything that applies.
-									</p>
-									<div className="mt-4 grid gap-2 sm:grid-cols-2">
-										{interests.map((item) => (
-											<label
-												key={item}
-												className="group flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm transition-all hover:border-indigo-200 hover:bg-indigo-50/40 has-[:checked]:border-indigo-400 has-[:checked]:bg-indigo-50 dark:border-white/10 dark:bg-[#08051f] dark:hover:border-indigo-400/40 dark:hover:bg-white/5 dark:has-[:checked]:border-indigo-400/60 dark:has-[:checked]:bg-indigo-500/10"
-											>
-												<input
-													name="interest"
-													type="checkbox"
-													value={item}
-													className="size-4 rounded border-zinc-300 accent-indigo-500"
-												/>
-												<span className="text-zinc-800 dark:text-indigo-100/85">
-													{item}
-												</span>
-											</label>
-										))}
-									</div>
-								</fieldset>
-
 								<div className="mt-7 space-y-2">
 									<label htmlFor="message" className={labelClass}>
-										Message
+										Description
 									</label>
 									<textarea
 										id="message"
 										name="message"
 										required
-										placeholder="Current stack, what you're protecting, where the gaps feel widest, timeline, anything else useful."
+										placeholder="What you're protecting, current controls, regulatory drivers (NRB, NIA 2076, ISO 27001), timeline, anything else useful."
 										className="min-h-40 w-full resize-y rounded-xl border border-zinc-200 bg-white px-3.5 py-3 text-sm text-zinc-950 transition-all placeholder:text-zinc-400 focus-visible:border-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/30 dark:border-white/10 dark:bg-[#08051f] dark:text-white dark:placeholder:text-indigo-100/30"
 									/>
 								</div>
@@ -320,7 +323,7 @@ export default function ContactPage() {
 								<div className="mt-8 flex flex-col gap-4 border-t border-zinc-200 pt-6 sm:flex-row sm:items-center sm:justify-between dark:border-white/10">
 									<p className="max-w-sm text-xs leading-relaxed text-zinc-500 dark:text-indigo-100/45">
 										By submitting you agree to our privacy terms. We never share
-										environment details outside the engagement.
+										your organisation's details outside the engagement.
 									</p>
 									<button
 										type="submit"
@@ -429,19 +432,20 @@ export default function ContactPage() {
 								Where we operate
 							</div>
 							<h2 className="mt-6 text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-								Remote-first, globally on-call.
+								Kathmandu-based. Nepal-wide. 24/7.
 							</h2>
 							<p className="mt-5 max-w-xl text-base leading-7 text-indigo-100/70">
-								The team works across San Francisco, Berlin, and Singapore — so
-								someone is always awake when the alert fires.
+								Our SOC and operations run from Kathmandu, serving organisations
+								across all seven provinces of Nepal — and Nepali enterprises
+								abroad.
 							</p>
 
 							<ul className="mt-8 grid gap-3 sm:grid-cols-2">
 								{[
-									"SOC 2 Type II certified",
-									"ISO 27001 compliant",
-									"HIPAA-ready deployments",
-									"GDPR aligned",
+									"ISO 27001 advisory & audit",
+									"NIA Guideline 2076 ready",
+									"Nepal Rastra Bank aligned",
+									"PCI-DSS & NIST CSF",
 								].map((item) => (
 									<li
 										key={item}
@@ -459,9 +463,9 @@ export default function ContactPage() {
 
 						<div className="grid gap-4 sm:grid-cols-3">
 							{[
-								{ city: "San Francisco", tz: "UTC−8" },
-								{ city: "Berlin", tz: "UTC+1" },
-								{ city: "Singapore", tz: "UTC+8" },
+								{ city: "Kathmandu HQ", tz: "UTC+5:45" },
+								{ city: "24/7 SOC", tz: "Always-on" },
+								{ city: "Incident Line", tz: "WhatsApp / Viber" },
 							].map((loc) => (
 								<div
 									key={loc.city}

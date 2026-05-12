@@ -14,108 +14,111 @@ import {
 } from "@phosphor-icons/react";
 
 const impact = [
-	{ value: "12k+", label: "Threats neutralized weekly" },
-	{ value: "<3min", label: "Mean response time" },
-	{ value: "98.4%", label: "Auto-mitigation rate" },
-	{ value: "42", label: "Customer deployments" },
+	{ value: "200+", label: "Organisations protected" },
+	{ value: "99.9%", label: "Threat detection accuracy" },
+	{ value: "24/7", label: "Kathmandu SOC" },
+	{ value: "2076", label: "NIA Guideline advisory" },
 ] as const;
 
 const cases = [
 	{
 		icon: Bank,
-		name: "Harbor Ledger",
-		sector: "Fintech",
-		headline: "Stopped 12k credential attacks in week one",
+		name: "A Nepali Commercial Bank",
+		sector: "Banking & Finance",
+		headline: "87% reduction in critical vulnerabilities in 6 weeks",
 		summary:
-			"Deployed AI-driven anomaly detection across customer banking endpoints — surfacing fraud rings before payouts cleared.",
-		metric: "98.4%",
-		metricLabel: "Threats auto-mitigated",
-		stack: ["Endpoint AI", "Identity", "SOC integration"],
+			"SOC + VAPT + GRC engagement aligned the bank with Nepal Rastra Bank IT directives and hardened core banking systems.",
+		metric: "87%",
+		metricLabel: "Critical vulnerabilities closed",
+		stack: ["SOC as a Service", "VAPT", "GRC — NRB"],
 		outcomes: [
-			"Credential stuffing dropped to near-zero in 7 days",
-			"Fraud rings flagged 6 hours before payout windows",
-			"Audit trail unified across 14 microservices",
+			"Challenge: Pre-audit VAPT surfaced 40+ critical & high vulnerabilities across core banking and mobile apps.",
+			"Approach: 24/7 SOC onboarding, 4-phase VAPT, GRC advisory against NRB IT directives.",
+			"Results: 87% of critical vulns closed in 6 weeks; clean retest; NRB audit passed.",
+			"Compliance: Nepal Rastra Bank directives, ISO 27001 alignment.",
+		],
+	},
+	{
+		icon: ShieldCheck,
+		name: "A Regional Insurer",
+		sector: "Insurance",
+		headline: "Achieved NIA Guideline 2076 compliance",
+		summary:
+			"Gap analysis, policy build-out and evidence package delivered ahead of the Nepal Insurance Authority deadline.",
+		metric: "2076",
+		metricLabel: "NIA Guideline compliant",
+		stack: ["GRC & Compliance", "Awareness Training", "Advisory"],
+		outcomes: [
+			"Challenge: New NIA Guideline 2076 obligations with limited internal security maturity.",
+			"Approach: Full gap analysis, ISMS build-out, board briefings and staff awareness rollout.",
+			"Results: Passed first-attempt audit; phishing-click rate cut 90%.",
+			"Compliance: NIA Guideline 2076, ISO 27001 aligned.",
 		],
 	},
 	{
 		icon: Heartbeat,
-		name: "Northline Health",
-		sector: "Healthcare",
-		headline: "HIPAA-grade visibility across 14 clinics",
+		name: "A Government e-Services Platform",
+		sector: "Public sector",
+		headline: "Hardened against DDoS and credential attacks",
 		summary:
-			"Replaced fragmented audit logs with a unified threat surface — every patient record access now traceable in real time.",
+			"Citizen-facing platform brought under 24/7 SOC monitoring with a DFIR retainer and cloud security baseline.",
 		metric: "24/7",
-		metricLabel: "Live monitoring coverage",
-		stack: ["Zero Trust", "Audit logging", "EDR"],
+		metricLabel: "Kathmandu SOC coverage",
+		stack: ["SOC as a Service", "Cloud Security", "DFIR"],
 		outcomes: [
-			"PHI access reviewed continuously, not quarterly",
-			"Insider risk model caught 3 anomalous accesses in month one",
-			"Compliance reporting cut from 11 days to 4 hours",
-		],
-	},
-	{
-		icon: Truck,
-		name: "Aster Freight",
-		sector: "Logistics",
-		headline: "Ransomware contained before encryption",
-		summary:
-			"Behavioral models flagged lateral movement inside the dispatch network and isolated affected nodes automatically.",
-		metric: "<3min",
-		metricLabel: "Mean containment time",
-		stack: ["XDR", "Automation", "Forensics"],
-		outcomes: [
-			"Lateral movement detected at 2nd hop, contained at 3rd",
-			"Zero downtime to dispatch operations",
-			"Forensic timeline available within the incident hour",
+			"Challenge: Repeated DDoS and credential-stuffing waves against a high-profile public service.",
+			"Approach: 24/7 SOC onboarding, cloud posture hardening, DFIR retainer and runbooks.",
+			"Results: Downtime eliminated during subsequent attack waves; mean response under 5 minutes.",
+			"Compliance: NIST CSF aligned; ISO 27001 advisory in progress.",
 		],
 	},
 ] as const;
 
 const sectors = [
-	{ icon: Bank, label: "Financial services" },
+	{ icon: Bank, label: "Banking & Finance" },
+	{ icon: ShieldCheck, label: "Insurance" },
+	{ icon: Truck, label: "Government & Public Sector" },
+	{ icon: Pulse, label: "Telecom & ISPs" },
 	{ icon: Heartbeat, label: "Healthcare" },
-	{ icon: Truck, label: "Logistics & supply chain" },
-	{ icon: ShieldCheck, label: "Government & defense" },
-	{ icon: Sparkle, label: "SaaS & technology" },
-	{ icon: Pulse, label: "Manufacturing" },
+	{ icon: Sparkle, label: "Education & NGOs" },
 ] as const;
 
 const playbook = [
 	{
 		icon: Eye,
-		title: "Map the attack surface",
-		text: "Endpoint, identity, and workload coverage audited in the first 48 hours of every engagement.",
+		title: "Challenge",
+		text: "We start with a clear, agreed problem statement — risks, scope, regulators in play.",
 	},
 	{
 		icon: Strategy,
-		title: "Deploy detection",
-		text: "AI behavioral models tuned to your environment go live in days, not quarters.",
+		title: "Approach",
+		text: "A right-sized engagement: SOC, VAPT, EDR, GRC, DFIR or training — singly or combined.",
 	},
 	{
 		icon: Lightning,
-		title: "Automate response",
-		text: "Containment playbooks fire automatically. Humans verify, machines act.",
+		title: "Results & Compliance",
+		text: "Measurable outcomes mapped to NIA 2076, NRB directives, ISO 27001 or PCI-DSS evidence.",
 	},
 ] as const;
 
 const testimonials = [
 	{
 		quote:
-			"They caught a credential ring our existing tooling had missed for six weeks. The ROI was clear by week two.",
-		name: "Mara Voss",
-		role: "COO, Harbor Ledger",
+			"Selim Solution closed 87% of our critical findings in six weeks. The NRB audit went through first attempt.",
+		name: "Head of IT Security",
+		role: "Commercial Bank, Nepal",
 	},
 	{
 		quote:
-			"Compliance reporting used to take a team of three eleven days. It's now four hours and the auditors prefer the output.",
-		name: "Talia Brenner",
-		role: "Security Lead, Northline Health",
+			"Our NIA Guideline 2076 readiness moved from spreadsheet to certified in three months. Their advisory team is excellent.",
+		name: "CRO",
+		role: "Regional Insurer, Nepal",
 	},
 	{
 		quote:
-			"Ransomware was contained before our dispatch team noticed anything was off. That's the only outcome that matters.",
-		name: "Ren Ito",
-		role: "Founder, Aster Freight",
+			"Their Kathmandu SOC took the DDoS pressure off our team. Response times in minutes, on Viber if we need it.",
+		name: "Director, e-Services",
+		role: "Government of Nepal",
 	},
 ] as const;
 
@@ -153,16 +156,15 @@ export default function CaseStudiesPage() {
 									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-300 opacity-75" />
 									<span className="relative inline-flex size-2 rounded-full bg-indigo-200" />
 								</span>
-								Customer outcomes
+								Case studies
 							</div>
 							<h1 className="text-balance text-[clamp(2.2rem,8vw,3.4rem)] font-semibold leading-[0.95] tracking-tight">
-								Real threats. Real environments. <br className="hidden sm:block" />
+								Real threats. Real Nepali organisations. <br className="hidden sm:block" />
 								Real outcomes.
 							</h1>
 							<p className="mx-auto mt-7 max-w-2xl text-pretty text-base leading-7 text-indigo-100/75 sm:text-lg">
-								How security teams across fintech, healthcare, and logistics stopped
-								active threats with AI-driven detection, zero-trust enforcement, and
-								automated response.
+								Anonymised engagements from banks, insurers and government platforms
+								across Nepal — each one delivered by our Kathmandu SOC.
 							</p>
 						</div>
 					</div>
@@ -205,7 +207,7 @@ export default function CaseStudiesPage() {
 								Featured engagements
 							</div>
 							<h2 className="mt-5 max-w-2xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-								Three threats. Three environments. One platform.
+								Three engagements. Three industries. One vigilant team.
 							</h2>
 						</div>
 					</div>
@@ -317,7 +319,7 @@ export default function CaseStudiesPage() {
 							Industries we secure
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							Built for environments where downtime isn't an option.
+							Built for Nepal's regulated and critical sectors.
 						</h2>
 					</div>
 
@@ -347,7 +349,7 @@ export default function CaseStudiesPage() {
 							What customers say
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							From the teams in the SOC chair.
+							From the teams we stand watch over.
 						</h2>
 					</div>
 
@@ -378,10 +380,10 @@ export default function CaseStudiesPage() {
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl text-center">
 						<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
-							Engagement playbook
+							How we structure every engagement
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							The same path every customer follows.
+							Challenge. Approach. Results & Compliance.
 						</h2>
 					</div>
 
@@ -423,18 +425,18 @@ export default function CaseStudiesPage() {
 
 					<div className="relative mx-auto max-w-3xl text-center">
 						<h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-							Want results like these in your environment?
+							Want outcomes like these in your organisation?
 						</h2>
 						<p className="mx-auto mt-5 max-w-xl text-base leading-7 text-indigo-100/70 sm:text-lg">
-							Book a 20-minute walkthrough. We'll show what AI-driven defense looks
-							like deployed against your stack — using your own data.
+							Book a free 30-minute consultation. Our Kathmandu team will scope an
+							engagement to your risks and regulatory drivers.
 						</p>
 						<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
 							<a
 								href="/contact"
 								className="group inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-7 text-sm font-semibold text-[#151032] shadow-[0_20px_60px_-24px_rgba(255,255,255,0.7)] transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
 							>
-								Book a walkthrough
+								Get Free Assessment
 								<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
 							</a>
 							<a

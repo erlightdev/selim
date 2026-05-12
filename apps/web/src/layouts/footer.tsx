@@ -1,21 +1,35 @@
 import {
 	ArrowUpRight,
 	EnvelopeSimple,
-	GithubLogo,
-	Globe,
 	LinkedinLogo,
+	MapPin,
+	Phone,
 	ShieldCheck,
-	TwitterLogo,
 } from "@phosphor-icons/react";
 
-const CONTACT_EMAIL = "security@selim.studio";
+const CONTACT_EMAIL = "info@selimsolution.com";
+const CONTACT_PHONE = "+977 (24/7 hotline)";
 
 const SOCIAL_LINKS = [
-	{ label: "Website", href: "https://selim.studio", icon: Globe },
 	{ label: "LinkedIn", href: "https://linkedin.com", icon: LinkedinLogo },
-	{ label: "Twitter", href: "https://twitter.com", icon: TwitterLogo },
-	{ label: "GitHub", href: "https://github.com", icon: GithubLogo },
 	{ label: "Email", href: `mailto:${CONTACT_EMAIL}`, icon: EnvelopeSimple },
+] as const;
+
+const SERVICE_LINKS = [
+	{ label: "SOC as a Service", href: "/services#soc" },
+	{ label: "VAPT", href: "/services#vapt" },
+	{ label: "Cloud Security", href: "/services#cloud" },
+	{ label: "EDR", href: "/services#edr" },
+	{ label: "GRC & Compliance", href: "/services#grc" },
+	{ label: "DFIR", href: "/services#dfir" },
+	{ label: "Security Awareness Training", href: "/services#training" },
+] as const;
+
+const COMPANY_LINKS = [
+	{ label: "About", href: "/about" },
+	{ label: "Case Studies", href: "/case-studies" },
+	{ label: "Careers", href: "/contact" },
+	{ label: "Blog / Insights", href: "/case-studies" },
 ] as const;
 
 const NOISE_DATA_URI =
@@ -30,7 +44,6 @@ export default function Footer() {
 						className="pointer-events-none absolute inset-0 opacity-25 mix-blend-soft-light"
 						style={{ backgroundImage: `url("${NOISE_DATA_URI}")` }}
 					/>
-					{/* indigo glow accents */}
 					<div className="pointer-events-none absolute -left-32 top-0 size-[28rem] rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.7)_0%,rgba(79,70,229,0.3)_45%,transparent_72%)] blur-3xl" />
 					<div className="pointer-events-none absolute -bottom-32 right-[-8%] size-[30rem] rounded-full bg-[radial-gradient(circle,rgba(129,140,248,0.5)_0%,rgba(79,70,229,0.2)_50%,transparent_75%)] blur-3xl" />
 
@@ -42,77 +55,130 @@ export default function Footer() {
 									Get in touch
 								</div>
 								<h2 className="mt-6 font-semibold text-3xl tracking-tight sm:text-5xl lg:text-6xl">
-									Let's secure
+									Clarity from the
 									<br />
-									your digital future
+									highest ground.
 								</h2>
 								<p className="mx-auto mt-5 max-w-xl text-base text-indigo-100/70 sm:text-lg">
-									Talk to our security team about deploying AI-driven defense
-									across your stack.
+									Vigilant. Resilient. Nepali. Selim Solution stands guard over
+									Nepal's digital frontier — 24/7 from Kathmandu.
 								</p>
 							</div>
 
-							<div className="border-white/10 border-t pt-8">
-								<div className="grid gap-8 lg:grid-cols-[1fr_auto]">
-									<div className="space-y-6">
-										<div className="flex items-center gap-3">
-											<div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 text-white shadow-[0_10px_30px_-12px_rgba(79,70,229,0.6)]">
-												<ShieldCheck className="size-5" weight="fill" />
-											</div>
-											<div>
-												<p className="text-white/70 text-xs uppercase tracking-[0.3em]">
-													Selim
-												</p>
-												<p className="text-sm text-white/70">
-													Next-gen cybersecurity platform
-												</p>
-											</div>
+							<div className="grid gap-8 border-white/10 border-t pt-10 lg:grid-cols-4">
+								{/* Col 1: Brand */}
+								<div className="space-y-5">
+									<div className="flex items-center gap-3">
+										<div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 text-white shadow-[0_10px_30px_-12px_rgba(79,70,229,0.6)]">
+											<ShieldCheck className="size-5" weight="fill" />
 										</div>
-										<div className="flex flex-wrap gap-2">
-											{SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-												<a
-													key={label}
-													href={href}
-													className="inline-flex size-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white/80 transition hover:-translate-y-0.5 hover:border-indigo-300/40 hover:bg-white/10 hover:text-white"
-													rel="noreferrer"
-													target="_blank"
-													aria-label={label}
-													title={label}
-												>
-													<Icon className="size-4" weight="duotone" />
-												</a>
-											))}
+										<div>
+											<p className="text-sm font-semibold tracking-tight text-white">
+												Selim Solution
+											</p>
+											<p className="text-white/60 text-[10px] uppercase tracking-[0.22em]">
+												Managed Cyber Security
+											</p>
 										</div>
 									</div>
-									<div className="space-y-2 text-left lg:text-right">
-										<a
-											href={`mailto:${CONTACT_EMAIL}`}
-											className="font-semibold text-lg text-white transition-opacity hover:opacity-80"
-										>
-											{CONTACT_EMAIL}
-										</a>
-										<div className="flex flex-wrap gap-4 text-white/70 text-xs lg:justify-end">
+									<p className="text-sm text-indigo-100/70">
+										Clarity from the highest ground.
+									</p>
+									<div className="flex flex-wrap gap-2">
+										{SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+											<a
+												key={label}
+												href={href}
+												className="inline-flex size-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white/80 transition hover:-translate-y-0.5 hover:border-indigo-300/40 hover:bg-white/10 hover:text-white"
+												rel="noreferrer"
+												target="_blank"
+												aria-label={label}
+												title={label}
+											>
+												<Icon className="size-4" weight="duotone" />
+											</a>
+										))}
+									</div>
+								</div>
+
+								{/* Col 2: Services */}
+								<div>
+									<p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-indigo-200/80">
+										Services
+									</p>
+									<ul className="mt-4 space-y-2">
+										{SERVICE_LINKS.map((s) => (
+											<li key={s.label}>
+												<a
+													href={s.href}
+													className="text-sm text-white/75 hover:text-white"
+												>
+													{s.label}
+												</a>
+											</li>
+										))}
+									</ul>
+								</div>
+
+								{/* Col 3: Company */}
+								<div>
+									<p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-indigo-200/80">
+										Company
+									</p>
+									<ul className="mt-4 space-y-2">
+										{COMPANY_LINKS.map((s) => (
+											<li key={s.label}>
+												<a
+													href={s.href}
+													className="text-sm text-white/75 hover:text-white"
+												>
+													{s.label}
+												</a>
+											</li>
+										))}
+									</ul>
+								</div>
+
+								{/* Col 4: Contact */}
+								<div>
+									<p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-indigo-200/80">
+										Contact
+									</p>
+									<ul className="mt-4 space-y-3 text-sm text-white/80">
+										<li>
+											<a
+												href={`mailto:${CONTACT_EMAIL}`}
+												className="inline-flex items-center gap-2 hover:text-white"
+											>
+												<EnvelopeSimple className="size-4" weight="duotone" />
+												{CONTACT_EMAIL}
+											</a>
+										</li>
+										<li className="inline-flex items-center gap-2">
+											<MapPin className="size-4" weight="duotone" />
+											Kathmandu, Nepal
+										</li>
+										<li className="inline-flex items-center gap-2">
+											<Phone className="size-4" weight="duotone" />
+											{CONTACT_PHONE}
+										</li>
+										<li>
 											<a
 												href="/contact"
-												className="inline-flex items-center gap-1 transition-opacity hover:opacity-80"
+												className="inline-flex items-center gap-1 text-indigo-200 hover:text-white"
 											>
-												Talk to sales <ArrowUpRight className="size-3" />
+												WhatsApp / Viber <ArrowUpRight className="size-3" />
 											</a>
-											<a
-												href="/security"
-												className="inline-flex items-center gap-1 transition-opacity hover:opacity-80"
-											>
-												Report a vulnerability <ArrowUpRight className="size-3" />
-											</a>
-										</div>
-									</div>
+										</li>
+									</ul>
 								</div>
 							</div>
 
 							<div className="border-white/10 border-t pt-6">
 								<div className="flex flex-col gap-3 text-white/60 text-xs sm:flex-row sm:items-center sm:justify-between">
 									<span>
-										© {new Date().getFullYear()} Selim. All rights reserved.
+										© {new Date().getFullYear()} Selim Solution. All rights
+										reserved.
 									</span>
 									<div className="flex flex-wrap gap-5">
 										<a href="/privacy" className="hover:text-white">
@@ -121,12 +187,12 @@ export default function Footer() {
 										<a href="/terms" className="hover:text-white">
 											Terms
 										</a>
-										<a href="/compliance" className="hover:text-white">
-											Compliance
+										<a href="/certifications" className="hover:text-white">
+											Certifications
 										</a>
 										<span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-[11px] uppercase tracking-[0.18em]">
 											<span className="size-1.5 rounded-full bg-emerald-400" />
-											SOC 2
+											ISO 27001
 										</span>
 									</div>
 								</div>

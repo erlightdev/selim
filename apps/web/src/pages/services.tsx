@@ -17,67 +17,11 @@ import {
 
 const services = [
 	{
-		id: "detection",
-		icon: Eye,
-		eyebrow: "Detection",
-		title: "AI threat detection",
-		text: "Behavioral models surface lateral movement, credential abuse, and data exfiltration that signature-based tools miss.",
-		bullets: [
-			"User & entity behavior analytics",
-			"Real-time anomaly scoring",
-			"Threat intel enrichment",
-		],
-		stat: "98.4%",
-		statLabel: "Auto-mitigation rate",
-	},
-	{
-		id: "xdr",
-		icon: Lightning,
-		eyebrow: "Response",
-		title: "Endpoint EDR / XDR",
-		text: "Correlated signal across endpoints, identities, and workloads — with one-click containment baked into every alert.",
-		bullets: [
-			"Cross-domain correlation",
-			"Automated isolation playbooks",
-			"Forensic timeline per incident",
-		],
-		stat: "<3min",
-		statLabel: "Mean response time",
-	},
-	{
-		id: "zero-trust",
-		icon: ShieldCheck,
-		eyebrow: "Identity",
-		title: "Zero-trust identity",
-		text: "Continuous verification across every access path. No implicit trust, no standing privilege, full auditability.",
-		bullets: [
-			"Conditional access policies",
-			"Privileged access management",
-			"Session-level risk scoring",
-		],
-		stat: "0",
-		statLabel: "Implicit trust assumptions",
-	},
-	{
-		id: "cloud",
-		icon: BracketsCurly,
-		eyebrow: "Workloads",
-		title: "Cloud workload security",
-		text: "Posture, runtime, and supply-chain protection across AWS, Azure, and GCP — agentless where possible.",
-		bullets: [
-			"CSPM + CIEM in one view",
-			"Runtime container protection",
-			"IaC scanning in CI/CD",
-		],
-		stat: "3",
-		statLabel: "Major clouds, one console",
-	},
-	{
 		id: "soc",
 		icon: Pulse,
 		eyebrow: "Operations",
-		title: "SOC & SIEM operations",
-		text: "24/7 monitoring with senior analysts. We integrate with Splunk, Sentinel, and Chronicle — you keep your system of record.",
+		title: "SOC as a Service",
+		text: "24/7 SIEM monitoring, threat detection and incident response from our Kathmandu SOC.",
 		bullets: [
 			"Tier-1 & Tier-2 triage",
 			"Custom detection engineering",
@@ -87,41 +31,152 @@ const services = [
 		statLabel: "Live SOC coverage",
 	},
 	{
-		id: "compliance",
+		id: "vapt",
+		icon: Eye,
+		eyebrow: "Offensive",
+		title: "VAPT",
+		text: "Vulnerability assessment and penetration testing across web, mobile, network, APIs and cloud — Black, Grey and White Box.",
+		bullets: [
+			"Web, mobile, network, API & cloud",
+			"OWASP, PTES & CREST aligned",
+			"Retest included",
+		],
+		stat: "87%",
+		statLabel: "Avg. critical vulns closed",
+	},
+	{
+		id: "cloud",
+		icon: BracketsCurly,
+		eyebrow: "Cloud",
+		title: "Cloud Security",
+		text: "Posture, runtime and identity protection across AWS, Azure and GCP — agentless where possible.",
+		bullets: [
+			"CSPM + CIEM in one view",
+			"Misconfiguration remediation",
+			"IaC scanning in CI/CD",
+		],
+		stat: "3",
+		statLabel: "Major clouds, one console",
+	},
+	{
+		id: "edr",
+		icon: Lightning,
+		eyebrow: "Endpoint",
+		title: "EDR",
+		text: "Endpoint Detection & Response across every laptop, server and device — correlated to our SOC for one-click containment.",
+		bullets: [
+			"Behavioural EDR agents",
+			"Automated isolation playbooks",
+			"Forensic timeline per incident",
+		],
+		stat: "<5min",
+		statLabel: "Mean containment time",
+	},
+	{
+		id: "grc",
 		icon: CubeFocus,
 		eyebrow: "Governance",
-		title: "Compliance & audit",
-		text: "Continuous controls monitoring. Evidence collected automatically. Reports your auditors actually want to read.",
+		title: "GRC & Compliance",
+		text: "ISO 27001, NIA Guideline 2076, PCI-DSS and Nepal Rastra Bank directives — advisory, gap analysis and audit support.",
 		bullets: [
-			"SOC 2 Type II ready",
-			"HIPAA, ISO 27001, PCI",
-			"On-demand audit packages",
+			"ISO 27001 implementation",
+			"NIA 2076 & NRB advisory",
+			"PCI-DSS scoping & evidence",
 		],
-		stat: "4h",
-		statLabel: "Audit report turnaround",
+		stat: "100%",
+		statLabel: "Audits passed",
 	},
+	{
+		id: "dfir",
+		icon: ShieldCheck,
+		eyebrow: "Forensics",
+		title: "DFIR",
+		text: "Digital Forensics & Incident Response — retainer-based and on-demand for active breaches.",
+		bullets: [
+			"24/7 incident hotline",
+			"Forensic imaging & analysis",
+			"Court-ready reporting",
+		],
+		stat: "24/7",
+		statLabel: "Incident hotline",
+	},
+	{
+		id: "training",
+		icon: Sparkle,
+		eyebrow: "People",
+		title: "Security Awareness Training",
+		text: "Phishing simulation and staff awareness programmes tuned to Nepali language, culture and threat landscape.",
+		bullets: [
+			"Phishing simulation",
+			"Role-based modules",
+			"Board-level briefings",
+		],
+		stat: "90%",
+		statLabel: "Avg. phish-click reduction",
+	},
+] as const;
+
+const industries = [
+	{
+		id: "banking",
+		title: "Banking & Finance",
+		text: "Aligned with Nepal Rastra Bank IT directives. SOC, VAPT and GRC tailored to commercial banks and BFIs.",
+	},
+	{
+		id: "insurance",
+		title: "Insurance",
+		text: "NIA Guideline 2076 advisory, gap analysis and audit support for life and non-life insurers.",
+	},
+	{
+		id: "government",
+		title: "Government & Public Sector",
+		text: "Citizen-facing platforms hardened against DDoS, credential attacks and data theft.",
+	},
+	{
+		id: "telecom",
+		title: "Telecom & ISPs",
+		text: "Carrier-grade monitoring, network VAPT and DFIR retainer for telecom and internet providers.",
+	},
+	{
+		id: "healthcare",
+		title: "Healthcare",
+		text: "Patient data protection, EMR security and compliance readiness for hospitals and clinics.",
+	},
+	{
+		id: "education",
+		title: "Education & NGOs",
+		text: "Affordable, training-led security for universities, schools and Nepali NGOs.",
+	},
+] as const;
+
+const compliance = [
+	{ id: "iso27001", title: "ISO 27001", text: "Information security management — implementation, internal audit and certification readiness." },
+	{ id: "nia2076", title: "NIA Guideline 2076", text: "Nepal Insurance Authority cyber security guideline — full advisory and evidence." },
+	{ id: "pci-dss", title: "PCI-DSS", text: "Payment card data protection — scoping, ASV scanning, control implementation." },
+	{ id: "nist", title: "NIST CSF", text: "Risk-based cyber framework mapping for enterprises and critical infrastructure." },
+	{ id: "nrb", title: "NRB Directives", text: "Nepal Rastra Bank IT and cyber directives — gap analysis and remediation." },
 ] as const;
 
 const process = [
 	{
 		icon: Eye,
-		title: "Assess",
-		text: "We map your attack surface, existing controls, and coverage gaps in 48 hours.",
+		title: "Discover",
+		text: "Scope, asset inventory and threat model. Black, Grey or White Box agreed in writing.",
 	},
 	{
 		icon: Strategy,
-		title: "Design",
-		text: "A defense plan scoped to your stack, your team, and your risk tolerance — not a template.",
+		title: "Analyse",
+		text: "Manual + automated testing across web, mobile, network, APIs and cloud. OWASP & PTES aligned.",
 	},
 	{
 		icon: Lightning,
-		title: "Deploy",
-		text: "Agents installed in minutes, detection tuned in days. First production wins inside week one.",
+		title: "Report",
+		text: "Severity-ranked findings, reproduction steps, business impact and remediation guidance.",
 	},
 	{
 		icon: FlowArrow,
-		title: "Operate",
-		text: "Continuous tuning, monthly threat hunts, and quarterly executive reviews.",
+		title: "Retest",
+		text: "Once your team has patched, we retest at no additional cost and issue a final clearance report.",
 	},
 ] as const;
 
@@ -140,33 +195,6 @@ const integrations = [
 	{ name: "Jira", slug: "jira" },
 ] as const;
 
-const compareRows = [
-	{
-		label: "Time to first detection",
-		legacy: "Weeks",
-		us: "Hours",
-	},
-	{
-		label: "Mean response time",
-		legacy: "30+ min",
-		us: "<3 min",
-	},
-	{
-		label: "Coverage model",
-		legacy: "Per-layer point tools",
-		us: "Unified XDR surface",
-	},
-	{
-		label: "Detection logic",
-		legacy: "Static signatures",
-		us: "AI behavioral models",
-	},
-	{
-		label: "Compliance reporting",
-		legacy: "Manual, quarterly",
-		us: "Continuous, on-demand",
-	},
-];
 
 export default function ServicesPage() {
 	return (
@@ -202,16 +230,16 @@ export default function ServicesPage() {
 									<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-300 opacity-75" />
 									<span className="relative inline-flex size-2 rounded-full bg-indigo-200" />
 								</span>
-								Services & capabilities
+								MSSP services & solutions
 							</div>
 							<h1 className="text-balance text-[clamp(2.2rem,8vw,3.4rem)] font-semibold leading-[0.95] tracking-tight">
-								Every layer of defense, <br className="hidden sm:block" />
-								one correlated surface.
+								Seven services. <br className="hidden sm:block" />
+								One vigilant Nepali SOC.
 							</h1>
 							<p className="mx-auto mt-7 max-w-2xl text-pretty text-base leading-7 text-indigo-100/75 sm:text-lg">
-								Endpoint, identity, cloud, and SOC operations — unified into a
-								single AI-driven platform that detects, prevents, and responds in
-								real time.
+								SOC as a Service, VAPT, Cloud Security, EDR, GRC, DFIR and Security
+								Awareness Training — delivered 24/7 from Kathmandu, tuned to Nepal's
+								regulatory landscape.
 							</p>
 							<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
 								<a
@@ -242,14 +270,14 @@ export default function ServicesPage() {
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl text-center">
 						<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
-							Platform services
+							MSSP services
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							Six services. One unified platform.
+							Seven services. One Kathmandu team.
 						</h2>
 						<p className="mt-5 text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
-							Pick the layers you need. Every service shares one correlated data
-							model, so the more you turn on, the sharper the signal gets.
+							Pick the services you need. We deliver each one with the same
+							standards, the same SOC, and one accountable partner.
 						</p>
 					</div>
 
@@ -325,11 +353,24 @@ export default function ServicesPage() {
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl text-center">
 						<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
-							How we engage
+							VAPT — our flagship offering
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							From signed to protected in under two weeks.
+							Know your vulnerabilities before attackers do.
 						</h2>
+						<p className="mt-5 text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
+							Four-phase Vulnerability Assessment & Penetration Testing across web,
+							mobile, network, APIs and cloud — Black, Grey or White Box.
+						</p>
+						<div className="mt-6">
+							<a
+								href="/contact"
+								className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-5 text-sm font-semibold text-white shadow-[0_20px_60px_-24px_rgba(79,70,229,0.7)] transition-all hover:-translate-y-0.5 hover:bg-indigo-500"
+							>
+								Request a VAPT Quote
+								<ArrowRight className="size-4" />
+							</a>
+						</div>
 					</div>
 
 					<ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -361,45 +402,58 @@ export default function ServicesPage() {
 				</div>
 			</section>
 
-			{/* 4. COMPARISON */}
+			{/* 4. INDUSTRIES (Solutions) */}
 			<section className="bg-white py-20 sm:py-24 dark:bg-zinc-950">
-				<div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl text-center">
 						<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
-							Why it's different
+							Solutions by industry
 						</div>
 						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-							Legacy stack vs. one unified platform.
+							Built for Nepal's regulated industries.
 						</h2>
 					</div>
 
-					<div className="mt-12 overflow-hidden rounded-3xl border border-zinc-200 bg-white dark:border-white/10 dark:bg-[#0d092d]">
-						<div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-zinc-200 bg-zinc-50/60 px-5 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500 sm:px-7 dark:border-white/10 dark:bg-white/[0.03] dark:text-indigo-100/55">
-							<span>Capability</span>
-							<span className="text-center">Legacy tooling</span>
-							<span className="text-right text-indigo-600 dark:text-indigo-300">
-								Selim
-							</span>
-						</div>
-						{compareRows.map((row) => (
-							<div
-								key={row.label}
-								className="grid grid-cols-[1.4fr_1fr_1fr] items-center border-b border-zinc-100 px-5 py-4 text-sm last:border-b-0 sm:px-7 dark:border-white/[0.06]"
+					<div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+						{industries.map((s) => (
+							<article
+								key={s.id}
+								id={s.id}
+								className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-7 dark:border-white/10 dark:bg-[#0d092d]"
 							>
-								<span className="font-medium text-zinc-800 dark:text-indigo-100/85">
-									{row.label}
-								</span>
-								<span className="text-center text-zinc-500 dark:text-indigo-100/45">
-									{row.legacy}
-								</span>
-								<span className="flex items-center justify-end gap-2 text-right font-semibold text-zinc-950 dark:text-white">
-									<CheckCircle
-										className="size-4 text-indigo-500 dark:text-indigo-300"
-										weight="fill"
-									/>
-									{row.us}
-								</span>
-							</div>
+								<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_0%,rgba(79,70,229,0.12),transparent_45%)]" />
+								<div className="relative">
+									<ShieldCheck className="size-7 text-indigo-500 dark:text-indigo-300" weight="duotone" />
+									<h3 className="mt-5 text-lg font-semibold tracking-tight">{s.title}</h3>
+									<p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-indigo-100/65">{s.text}</p>
+								</div>
+							</article>
+						))}
+					</div>
+
+					<div className="mx-auto mt-20 max-w-2xl text-center">
+						<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
+							Compliance frameworks
+						</div>
+						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+							Compliance you can defend.
+						</h2>
+					</div>
+
+					<div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+						{compliance.map((c) => (
+							<article
+								key={c.id}
+								id={c.id}
+								className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-7 dark:border-white/10 dark:bg-[#0d092d]"
+							>
+								<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(79,70,229,0.12),transparent_45%)]" />
+								<div className="relative">
+									<CubeFocus className="size-7 text-indigo-500 dark:text-indigo-300" weight="duotone" />
+									<h3 className="mt-5 text-lg font-semibold tracking-tight">{c.title}</h3>
+									<p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-indigo-100/65">{c.text}</p>
+								</div>
+							</article>
 						))}
 					</div>
 				</div>
@@ -415,11 +469,11 @@ export default function ServicesPage() {
 								Integrations
 							</div>
 							<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-								Plugs into the stack you already run.
+								Best-in-class tooling, locally operated.
 							</h2>
 							<p className="mt-5 text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
-								We don't replace your SIEM or ticketing — we make them sharper.
-								Native integrations across cloud, identity, alerting, and ITSM.
+								We deploy enterprise-grade SIEM, EDR and cloud security tooling —
+								operated by our Kathmandu team, tuned to your environment.
 							</p>
 							<a
 								href="/contact"
@@ -459,18 +513,18 @@ export default function ServicesPage() {
 						{[
 							{
 								icon: Brain,
-								title: "AI that explains itself",
-								text: "Every detection ships with the evidence behind it — no black boxes.",
+								title: "Local team, global standards",
+								text: "Kathmandu-based engineers holding CISSP, CISM, CEH, ISO 27001 and AWS / Azure security certifications.",
 							},
 							{
 								icon: Gear,
-								title: "Tuned to your environment",
-								text: "Behavioral baselines built in week one. Drift caught continuously.",
+								title: "Tuned to Nepal's regulations",
+								text: "NIA Guideline 2076, NRB directives, ISO 27001, PCI-DSS and NIST CSF — built into every engagement.",
 							},
 							{
 								icon: Sparkle,
-								title: "Senior engineers, on call",
-								text: "Tier-2 SOC analysts, not script runners. Mutual escalation guaranteed.",
+								title: "24/7 SOC, real humans",
+								text: "Senior analysts on call around the clock. WhatsApp, Viber and phone — pick whichever works.",
 							},
 						].map(({ icon: Icon, title, text }) => (
 							<article
@@ -505,18 +559,18 @@ export default function ServicesPage() {
 
 					<div className="relative mx-auto max-w-3xl text-center">
 						<h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-							Pick the services. We'll handle the rest.
+							Pick the services. We'll stand the watch.
 						</h2>
 						<p className="mx-auto mt-5 max-w-xl text-base leading-7 text-indigo-100/70 sm:text-lg">
-							20-minute walkthrough on your stack. We'll show exactly which
-							services close your largest coverage gaps.
+							Free 30-minute consultation with our Kathmandu team. We'll show you
+							which MSSP services close your biggest risks.
 						</p>
 						<div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
 							<a
 								href="/contact"
 								className="group inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-7 text-sm font-semibold text-[#151032] shadow-[0_20px_60px_-24px_rgba(255,255,255,0.7)] transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
 							>
-								Book a walkthrough
+								Get Free Assessment
 								<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
 							</a>
 							<a

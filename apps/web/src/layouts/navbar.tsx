@@ -21,66 +21,117 @@ import {
 } from "@/components/sheet";
 
 const navLinks = [
-	{ to: "/", label: "Home", description: "Platform overview" },
-	{ to: "/about", label: "About", description: "Team + mission" },
+	{ to: "/", label: "Home", description: "Brand & overview" },
+	{ to: "/about", label: "About", description: "Our story from Seim Lake" },
 	{
 		to: "/case-studies",
 		label: "Case Studies",
-		description: "Real customer outcomes",
+		description: "Outcomes across Nepal",
 	},
-	{ to: "/contact", label: "Contact", description: "Talk to an engineer" },
+	{ to: "/contact", label: "Contact", description: "Talk to our SOC team" },
 ] as const;
 
 const serviceCategories = [
 	{
-		heading: "Detection & response",
+		heading: "Services",
 		items: [
-			{
-				icon: Eye,
-				href: "/services#detection",
-				label: "Threat detection",
-				desc: "AI behavioral models tuned to your environment.",
-			},
-			{
-				icon: Lightning,
-				href: "/services#xdr",
-				label: "Endpoint EDR / XDR",
-				desc: "Correlated signal across every endpoint and identity.",
-			},
 			{
 				icon: Pulse,
 				href: "/services#soc",
-				label: "SOC & SIEM ops",
-				desc: "24/7 monitoring with automated response playbooks.",
+				label: "SOC as a Service",
+				desc: "24/7 SIEM, threat detection & incident response.",
 			},
-		],
-	},
-	{
-		heading: "Coverage",
-		items: [
 			{
-				icon: ShieldCheck,
-				href: "/services#zero-trust",
-				label: "Zero-trust identity",
-				desc: "Continuous verification across every access path.",
+				icon: Eye,
+				href: "/services#vapt",
+				label: "VAPT",
+				desc: "Vulnerability assessment & penetration testing.",
 			},
 			{
 				icon: BracketsCurly,
 				href: "/services#cloud",
-				label: "Cloud workload",
-				desc: "Posture, runtime, and supply-chain protection.",
+				label: "Cloud Security",
+				desc: "AWS, Azure, GCP posture management.",
+			},
+			{
+				icon: Lightning,
+				href: "/services#edr",
+				label: "EDR",
+				desc: "Endpoint detection & response.",
 			},
 			{
 				icon: CubeFocus,
-				href: "/services#compliance",
-				label: "Compliance & audit",
-				desc: "SOC 2, HIPAA, and ISO 27001 reporting on demand.",
+				href: "/services#grc",
+				label: "GRC & Compliance",
+				desc: "ISO 27001, NIA 2076, PCI-DSS.",
+			},
+			{
+				icon: ShieldCheck,
+				href: "/services#dfir",
+				label: "DFIR",
+				desc: "Digital forensics & incident response.",
+			},
+		],
+	},
+	{
+		heading: "Solutions by industry",
+		items: [
+			{
+				icon: ShieldCheck,
+				href: "/services#banking",
+				label: "Banking & Finance",
+				desc: "Nepal Rastra Bank directives.",
+			},
+			{
+				icon: ShieldCheck,
+				href: "/services#insurance",
+				label: "Insurance",
+				desc: "NIA Guideline 2076 advisory.",
+			},
+			{
+				icon: ShieldCheck,
+				href: "/services#government",
+				label: "Government",
+				desc: "Public-sector hardening & DDoS defence.",
+			},
+			{
+				icon: ShieldCheck,
+				href: "/services#telecom",
+				label: "Telecom & ISPs",
+				desc: "Carrier-grade monitoring & response.",
+			},
+			{
+				icon: ShieldCheck,
+				href: "/services#healthcare",
+				label: "Healthcare",
+				desc: "Patient data protection & compliance.",
+			},
+			{
+				icon: ShieldCheck,
+				href: "/services#education",
+				label: "Education & NGOs",
+				desc: "Affordable, training-focused security.",
 			},
 		],
 	},
 ] as const;
 
-const CONTACT_EMAIL = "hello@selim.security";
+const complianceLinks = [
+	{ href: "/services#iso27001", label: "ISO 27001" },
+	{ href: "/services#nia2076", label: "NIA Guideline 2076" },
+	{ href: "/services#pci-dss", label: "PCI-DSS" },
+	{ href: "/services#nist", label: "NIST CSF" },
+	{ href: "/services#nrb", label: "NRB Directives" },
+] as const;
+
+const resourceLinks = [
+	{ href: "/case-studies", label: "Case Studies" },
+	{ href: "/about#certifications", label: "Certifications" },
+	{ href: "/about", label: "Brand Story" },
+	{ href: "/contact", label: "Downloads" },
+] as const;
+
+const CONTACT_EMAIL = "info@selimsolution.com";
 
 export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -118,10 +169,10 @@ export default function Navbar() {
 								</div>
 								<div className="hidden min-w-0 flex-col sm:flex">
 									<span className="text-base font-semibold leading-tight tracking-tight text-white">
-										Selim
+										Selim Solution
 									</span>
 									<span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/55">
-										Cybersecurity
+										Managed Cyber Security
 									</span>
 								</div>
 							</Link>
@@ -156,18 +207,19 @@ export default function Navbar() {
 										<ChevronDown className="size-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
 									</Link>
 
-									<div className="pointer-events-none absolute left-1/2 top-full z-50 w-[44rem] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+									<div className="pointer-events-none absolute left-1/2 top-full z-50 w-[72rem] max-w-[calc(100vw-2rem)] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
 										<div className="relative overflow-hidden rounded-2xl border border-white/12 bg-[#0d092d]/97 shadow-[0_40px_120px_-40px_rgba(79,70,229,0.7)] backdrop-blur-2xl">
 											<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(99,102,241,0.18),transparent_45%)]" />
 											<div className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:20px_20px]" />
 
-											<div className="relative grid grid-cols-[1.4fr_1fr]">
-												<div className="grid grid-cols-2 gap-1 p-4">
+											<div className="relative grid grid-cols-[1fr_16rem]">
+												<div className="flex flex-col gap-2 p-4">
 													{serviceCategories.map((cat) => (
-														<div key={cat.heading} className="space-y-1">
+														<div key={cat.heading}>
 															<p className="px-3 pb-1 pt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-300/70">
 																{cat.heading}
 															</p>
+															<div className="grid grid-cols-3 gap-1">
 															{cat.items.map((item) => {
 																const Icon = item.icon;
 																return (
@@ -191,38 +243,46 @@ export default function Navbar() {
 																);
 															})}
 														</div>
+														</div>
 													))}
 												</div>
 
 												<div className="relative m-3 overflow-hidden rounded-xl border border-white/10 bg-[#08051f] p-5">
 													<div className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.6)_0%,transparent_70%)] blur-2xl" />
-													<div className="relative flex h-full flex-col">
-														<Sparkle
-															className="size-5 text-indigo-300"
-															weight="duotone"
-														/>
-														<h3 className="mt-4 text-base font-semibold tracking-tight text-white">
-															Map your coverage gaps
-														</h3>
-														<p className="mt-2 text-xs leading-relaxed text-white/60">
-															20-minute walkthrough on your stack. We surface
-															every blind spot before you commit.
-														</p>
-														<div className="mt-auto flex flex-col gap-2">
-															<Link
-																to="/contact"
-																className="inline-flex items-center gap-1.5 self-start rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#151032] transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
-															>
-																Book a demo
-																<ArrowRight className="size-3.5" />
-															</Link>
-															<Link
-																to="/services"
-																className="inline-flex items-center gap-1.5 self-start text-xs font-medium text-indigo-200/80 hover:text-white"
-															>
-																View all services
-																<ArrowRight className="size-3" />
-															</Link>
+													<div className="relative flex h-full flex-col gap-4">
+														<div>
+															<p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-300/70">
+																Compliance
+															</p>
+															<ul className="mt-2 grid grid-cols-1 gap-1">
+																{complianceLinks.map((l) => (
+																	<li key={l.href}>
+																		<a
+																			href={l.href}
+																			className="text-xs font-medium text-white/75 hover:text-white"
+																		>
+																			{l.label}
+																		</a>
+																	</li>
+																))}
+															</ul>
+														</div>
+														<div>
+															<p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-300/70">
+																Resources
+															</p>
+															<ul className="mt-2 grid grid-cols-1 gap-1">
+																{resourceLinks.map((l) => (
+																	<li key={l.href}>
+																		<a
+																			href={l.href}
+																			className="text-xs font-medium text-white/75 hover:text-white"
+																		>
+																			{l.label}
+																		</a>
+																	</li>
+																))}
+															</ul>
 														</div>
 													</div>
 												</div>
@@ -262,7 +322,7 @@ export default function Navbar() {
 								className="hidden h-9 items-center gap-2 rounded-xl bg-white px-3 text-xs font-semibold text-[#16113a] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-50 min-[420px]:inline-flex sm:h-10 sm:px-4 sm:text-sm"
 							>
 								<Sparkle className="size-3.5" weight="fill" />
-								Get Protected
+								Get Free Assessment
 							</Link>
 
 							<Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -293,10 +353,10 @@ export default function Navbar() {
 											</div>
 											<div>
 												<p className="text-base font-semibold tracking-tight">
-													Selim
+													Selim Solution
 												</p>
 												<p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/55">
-													Cybersecurity
+													Managed Cyber Security
 												</p>
 											</div>
 										</div>
@@ -335,10 +395,10 @@ export default function Navbar() {
 											>
 												<span>
 													<span className="block text-sm font-semibold text-white">
-														Services
+														Services & Solutions
 													</span>
 													<span className="block text-xs text-white/55">
-														Full platform coverage
+														MSSP services + industries + compliance
 													</span>
 												</span>
 												<ChevronDown
@@ -399,7 +459,7 @@ export default function Navbar() {
 												to="/contact"
 												className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-[#151032] shadow-[0_20px_60px_-28px_rgba(255,255,255,0.7)] transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
 											>
-												Get Protected
+												Get Free Assessment
 												<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
 											</Link>
 										</SheetClose>
