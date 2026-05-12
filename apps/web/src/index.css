@@ -1,1 +1,60 @@
 @import "@selim/ui/globals.css";
+
+@keyframes selim-rise {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 12px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes selim-pulse {
+	0%,
+	100% {
+		opacity: 0.72;
+		transform: scale3d(1, 1, 1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale3d(1.35, 1.35, 1);
+	}
+}
+
+@keyframes selim-marquee {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@keyframes selim-width {
+	0%,
+	100% {
+		transform: translate3d(-18%, 0, 0) scaleX(0.78);
+	}
+	50% {
+		transform: translate3d(0, 0, 0) scaleX(1);
+	}
+}
+
+@keyframes selim-testimonial {
+	0% {
+		opacity: 0;
+		transform: translate3d(28px, 0, 0) scale(0.98);
+	}
+	8%,
+	30% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	38%,
+	100% {
+		opacity: 0;
+		transform: translate3d(-28px, 0, 0) scale(0.98);
+	}
+}
