@@ -11,7 +11,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <div className="min-h-svh bg-background text-foreground">
       <Navbar />
-      <main className="mx-auto w-full  flex-1 px-4 py-10 sm:px-6 lg:px-8">
+      <main className="mx-auto w-full flex-1 px-1.5 py-10 sm:px-4 lg:px-6">
         {children}
       </main>
       <Footer />

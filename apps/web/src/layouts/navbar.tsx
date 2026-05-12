@@ -1,6 +1,7 @@
 import { Button } from "@selim/ui/components/button";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, Sparkles, X } from "lucide-react";
+import { ShieldCheck } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
 
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
@@ -63,19 +64,19 @@ export default function Navbar() {
             <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[linear-gradient(90deg,rgba(255,255,255,0.12),transparent_22%,transparent_78%,rgba(255,255,255,0.08))]" />
             <div className="relative flex items-center justify-between gap-3 px-3 py-3 sm:px-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:justify-items-center">
               <div className="flex min-w-0 items-center gap-3 lg:justify-self-start">
-                <Link to="/" className="flex items-center">
-                  <span className="flex size-10 items-center justify-center rounded-xl border border-white/14 bg-white/10 text-sm font-semibold text-white shadow-inner shadow-white/10">
-                    S
-                  </span>
+                <Link to="/" className="flex items-center gap-2.5">
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 text-white shadow-[0_10px_30px_-12px_rgba(79,70,229,0.6)]">
+                    <ShieldCheck className="size-5" weight="fill" />
+                  </div>
+                  <div className="hidden min-w-0 flex-col sm:flex">
+                    <span className="text-base font-semibold leading-tight tracking-tight text-white">
+                      Selim
+                    </span>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/55">
+                      Cybersecurity
+                    </span>
+                  </div>
                 </Link>
-                <div className="hidden min-w-0 flex-col sm:flex">
-                  <span className="font-medium text-[10px] text-white/50 uppercase tracking-[0.28em]">
-                    Selim Studio
-                  </span>
-                  <span className="truncate text-white/72 text-xs">
-                    Product interfaces and software systems
-                  </span>
-                </div>
               </div>
 				<nav className="hidden items-center justify-center lg:flex lg:justify-self-center">
 					<div className="flex items-center gap-1 rounded-xl bg-white/[0.07] p-1 ring-1 ring-white/10">

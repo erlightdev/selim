@@ -4,7 +4,6 @@ import {
 	HeadContent,
 	Outlet,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import SiteLayout from "@/layouts/site-layout";
@@ -49,7 +48,6 @@ function RootComponent() {
 				</SiteLayout>
 				<Toaster richColors />
 			</ThemeProvider>
-			<TanStackRouterDevtools position="bottom-left" />
 		</>
 	);
 }
