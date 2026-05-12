@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
-import type React from "react";
 import { motion } from "motion/react";
+import { useTheme } from "next-themes";
+import { useEffect, useId, useRef, useState } from "react";
 
 /**
  * Animated Theme Toggler - sun/moon morph.
@@ -79,18 +79,19 @@ export function AnimatedThemeToggler({
   const maskId = `att${rawId.replace(/:/g, "")}`;
   const lastSnd = useRef(0);
   const isFirst = useRef(true);
-  const [isDark, setIsDark] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const isDark = mounted ? resolvedTheme === "dark" : false;
 
   useEffect(() => {
-    setIsDark(document.documentElement.classList.contains("dark"));
+    setMounted(true);
     requestAnimationFrame(() => {
       isFirst.current = false;
     });
   }, []);
 
   const toggle = () => {
-    const dark = document.documentElement.classList.toggle("dark");
-    setIsDark(dark);
+    setTheme(isDark ? "light" : "dark");
     if (sound) tick(lastSnd);
   };
 
