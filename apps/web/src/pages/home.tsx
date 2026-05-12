@@ -1,9 +1,5 @@
 import React from "react";
 import { TestimonialsSection } from "@/components/testimonial-v2";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
 import {
   ArrowRight,
   BracketsCurly,
@@ -726,39 +722,25 @@ guard.on("threat", (e) => respond(e));`}
             </a>
           </div>
 
-          <Swiper
-            modules={[Navigation, Pagination, A11y, Autoplay]}
-            spaceBetween={16}
-            slidesPerView={1}
-            loop
-            loopAdditionalSlides={3}
-            autoplay={{ delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-            pagination={{ clickable: true }}
-            navigation
-            breakpoints={{
-              640: { slidesPerView: 1.4, spaceBetween: 20 },
-              900: { slidesPerView: 2.2, spaceBetween: 24 },
-              1200: { slidesPerView: 3, spaceBetween: 24 },
-            }}
-            className="cases-swiper"
-          >
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {cases.map((item, index) => (
-              <SwiperSlide key={item.name} className="h-auto">
               <article
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-zinc-200 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_30px_90px_-50px_rgba(79,70,229,0.6)] dark:border-white/10 dark:bg-[#0d092d]"
+                key={item.name}
+                className="group relative flex flex-col overflow-hidden rounded-3xl border border-zinc-200 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_30px_90px_-50px_rgba(79,70,229,0.6)] dark:border-white/10 dark:bg-[#0d092d] dark:hover:border-indigo-400/30"
               >
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/50 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(79,70,229,0.1),transparent_45%)]" />
 
-                <div className="flex items-center justify-between p-6 pb-0">
+                <div className="relative flex items-center justify-between p-6 pb-0">
                   <span className="font-mono text-xs text-zinc-400 dark:text-indigo-200/50">
-                    {String(index + 1).padStart(2, "0")} / 03
+                    {String(index + 1).padStart(2, "0")} / {String(cases.length).padStart(2, "0")}
                   </span>
                   <span className="rounded-full border border-zinc-200 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500 dark:border-white/10 dark:text-indigo-200/70">
                     {item.sector}
                   </span>
                 </div>
 
-                <div className="p-6">
+                <div className="relative p-6">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-semibold tracking-tight text-zinc-950 dark:text-white">
                       {item.metric}
@@ -776,7 +758,7 @@ guard.on("threat", (e) => respond(e));`}
                   </p>
                 </div>
 
-                <div className="mt-auto border-t border-zinc-100 px-6 py-4 dark:border-white/8">
+                <div className="relative mt-auto border-t border-zinc-100 px-6 py-4 dark:border-white/10">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap gap-1.5">
                       {item.stack.map((tag) => (
@@ -794,9 +776,8 @@ guard.on("threat", (e) => respond(e));`}
                   </div>
                 </div>
               </article>
-              </SwiperSlide>
             ))}
-          </Swiper>
+          </div>
         </div>
       </section>
 
