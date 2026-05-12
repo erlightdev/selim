@@ -144,14 +144,17 @@ export default function Navbar() {
 
 								{/* SERVICES MEGAMENU */}
 								<div className="group relative">
-									<button
-										type="button"
+									<Link
+										to="/services"
 										className={`${baseLink} ${inactiveLink} inline-flex items-center gap-1 group-hover:bg-white/10 group-hover:text-white group-focus-within:bg-white/10 group-focus-within:text-white`}
+										activeProps={{
+											className: `${baseLink} ${activeLink} inline-flex items-center gap-1`,
+										}}
 										aria-haspopup="true"
 									>
 										Services
 										<ChevronDown className="size-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
-									</button>
+									</Link>
 
 									<div className="pointer-events-none absolute left-1/2 top-full z-50 w-[44rem] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
 										<div className="relative overflow-hidden rounded-2xl border border-white/12 bg-[#0d092d]/97 shadow-[0_40px_120px_-40px_rgba(79,70,229,0.7)] backdrop-blur-2xl">
@@ -205,13 +208,22 @@ export default function Navbar() {
 															20-minute walkthrough on your stack. We surface
 															every blind spot before you commit.
 														</p>
-														<Link
-															to="/contact"
-															className="mt-auto inline-flex items-center gap-1.5 self-start rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#151032] transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
-														>
-															Book a demo
-															<ArrowRight className="size-3.5" />
-														</Link>
+														<div className="mt-auto flex flex-col gap-2">
+															<Link
+																to="/contact"
+																className="inline-flex items-center gap-1.5 self-start rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#151032] transition-all hover:-translate-y-0.5 hover:bg-indigo-50"
+															>
+																Book a demo
+																<ArrowRight className="size-3.5" />
+															</Link>
+															<Link
+																to="/services"
+																className="inline-flex items-center gap-1.5 self-start text-xs font-medium text-indigo-200/80 hover:text-white"
+															>
+																View all services
+																<ArrowRight className="size-3" />
+															</Link>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -337,6 +349,17 @@ export default function Navbar() {
 											</button>
 											{servicesOpenMobile && (
 												<div className="border-t border-white/10 p-2">
+													<SheetClose asChild>
+														<Link
+															to="/services"
+															className="mb-1 flex items-center justify-between gap-3 rounded-lg bg-white/5 px-3 py-2.5 transition-colors hover:bg-white/10"
+														>
+															<span className="text-sm font-semibold text-white">
+																View all services
+															</span>
+															<ArrowRight className="size-4 text-indigo-300" />
+														</Link>
+													</SheetClose>
 													{serviceCategories.map((cat) => (
 														<div key={cat.heading} className="mb-1">
 															<p className="px-3 pb-1 pt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-300/70">

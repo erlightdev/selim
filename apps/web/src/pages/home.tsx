@@ -489,17 +489,26 @@ export default function HomePage() {
       {/* 4. BENTO GRID — CYBERSECURITY CAPABILITIES */}
       <section className=" py-16 dark:bg-[#06031a]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 max-w-2xl">
-            <h2 className="text-base font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-300">
-              Capabilities
-            </h2>
-            <p className="mt-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-              A unified shield for modern threats.
-            </p>
-            <p className="mt-4 text-lg text-zinc-600 dark:text-indigo-100/65">
-              AI-driven detection, real-time response, and seamless integration
-              across every layer of your stack.
-            </p>
+          <div className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="text-base font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-300">
+                Capabilities
+              </h2>
+              <p className="mt-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+                A unified shield for modern threats.
+              </p>
+              <p className="mt-4 text-lg text-zinc-600 dark:text-indigo-100/65">
+                AI-driven detection, real-time response, and seamless integration
+                across every layer of your stack.
+              </p>
+            </div>
+            <a
+              href="/services"
+              className="group inline-flex h-11 shrink-0 items-center gap-2 self-start rounded-xl border border-zinc-200 bg-white px-5 text-sm font-semibold text-zinc-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:text-indigo-700 sm:self-end dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-indigo-400/40 dark:hover:text-indigo-200"
+            >
+              View all services
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[18rem]">
