@@ -1,6 +1,7 @@
 import {
 	ArrowUpRight,
 	EnvelopeSimple,
+	Heart,
 	LinkedinLogo,
 	MapPin,
 	Phone,
@@ -37,8 +38,8 @@ const NOISE_DATA_URI =
 
 export default function Footer() {
 	return (
-		<footer className="m-2 py-10">
-			<div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
+		<footer className="m-2 py-4">
+			<div className="mx-auto w-full px-1.5 sm:px-2.5 lg:px-3.5">
 				<div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#2f2a7a] via-[#191146] to-[#0b0824] text-white shadow-[0_40px_120px_-80px_rgba(79,70,229,0.85)]">
 					<div
 						className="pointer-events-none absolute inset-0 opacity-25 mix-blend-soft-light"
@@ -47,6 +48,7 @@ export default function Footer() {
 					<div className="pointer-events-none absolute -left-32 top-0 size-[28rem] rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.7)_0%,rgba(79,70,229,0.3)_45%,transparent_72%)] blur-3xl" />
 					<div className="pointer-events-none absolute -bottom-32 right-[-8%] size-[30rem] rounded-full bg-[radial-gradient(circle,rgba(129,140,248,0.5)_0%,rgba(79,70,229,0.2)_50%,transparent_75%)] blur-3xl" />
 
+					<style>{`@keyframes hiver-gradient { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }`}</style>
 					<div className="relative px-6 py-12 sm:px-10 lg:px-12">
 						<div className="space-y-10">
 							<div className="text-center">
@@ -68,19 +70,11 @@ export default function Footer() {
 							<div className="grid gap-8 border-white/10 border-t pt-10 lg:grid-cols-4">
 								{/* Col 1: Brand */}
 								<div className="space-y-5">
-									<div className="flex items-center gap-3">
-										<div className="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 text-white shadow-[0_10px_30px_-12px_rgba(79,70,229,0.6)]">
-											<ShieldCheck className="size-5" weight="fill" />
-										</div>
-										<div>
-											<p className="text-sm font-semibold tracking-tight text-white">
-												Selim Solution
-											</p>
-											<p className="text-white/60 text-[10px] uppercase tracking-[0.22em]">
-												Managed Cyber Security
-											</p>
-										</div>
-									</div>
+									<img
+										src="/selim-logo-white.svg"
+										alt="Selim Solution"
+										className="h-10 w-auto"
+									/>
 									<p className="text-sm text-indigo-100/70">
 										Clarity from the highest ground.
 									</p>
@@ -176,9 +170,25 @@ export default function Footer() {
 
 							<div className="border-white/10 border-t pt-6">
 								<div className="flex flex-col gap-3 text-white/60 text-xs sm:flex-row sm:items-center sm:justify-between">
-									<span>
-										© {new Date().getFullYear()} Selim Solution. All rights
-										reserved.
+									<span className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+										<span>
+											© {new Date().getFullYear()} Selim Solution. All rights
+											reserved.
+										</span>
+										<span className="hidden sm:inline text-white/30">•</span>
+										<span className="inline-flex items-center gap-1.5">
+											Designed & Developed With
+											<Heart className="size-3.5 text-rose-400" weight="fill" />
+											By
+											<a
+												href="https://hiver.com.np"
+												target="_blank"
+												rel="noreferrer"
+												className="bg-[linear-gradient(90deg,#a5b4fc,#f0abfc,#fda4af,#a5b4fc)] bg-size-[200%_100%] bg-clip-text font-semibold text-transparent animate-[hiver-gradient_4s_linear_infinite]"
+											>
+												Hiver Technology
+											</a>
+										</span>
 									</span>
 									<div className="flex flex-wrap gap-5">
 										<a href="/privacy" className="hover:text-white">

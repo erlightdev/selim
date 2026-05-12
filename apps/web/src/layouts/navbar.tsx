@@ -163,18 +163,17 @@ export default function Navbar() {
 					<div className="relative flex items-center justify-between gap-3 px-3 py-3 sm:px-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:justify-items-center">
 						{/* LOGO */}
 						<div className="flex min-w-0 items-center gap-3 lg:justify-self-start">
-							<Link to="/" className="flex items-center gap-2.5">
-								<div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 text-white shadow-[0_10px_30px_-12px_rgba(79,70,229,0.6)]">
-									<ShieldCheck className="size-5" weight="fill" />
-								</div>
-								<div className="hidden min-w-0 flex-col sm:flex">
-									<span className="text-base font-semibold leading-tight tracking-tight text-white">
-										Selim Solution
-									</span>
-									<span className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/55">
-										Managed Cyber Security
-									</span>
-								</div>
+							<Link to="/" className="flex items-center" aria-label="Selim Solution">
+								<img
+									src="/selim-logo-light.svg"
+									alt="Selim Solution"
+									className="h-6 w-auto sm:h-6 dark:hidden"
+								/>
+								<img
+									src="/selim-logo-white.svg"
+									alt="Selim Solution"
+									className="hidden h-6 w-auto sm:h-6 dark:block"
+								/>
 							</Link>
 						</div>
 
@@ -347,19 +346,16 @@ export default function Navbar() {
 									<div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.45)_0%,transparent_70%)] blur-3xl" />
 
 									<div className="relative border-b border-white/10 px-5 pb-5 pt-6">
-										<div className="flex items-center gap-2.5">
-											<div className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 text-white shadow-[0_10px_30px_-12px_rgba(79,70,229,0.6)]">
-												<ShieldCheck className="size-5" weight="fill" />
-											</div>
-											<div>
-												<p className="text-base font-semibold tracking-tight">
-													Selim Solution
-												</p>
-												<p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/55">
-													Managed Cyber Security
-												</p>
-											</div>
-										</div>
+										<img
+											src="/selim-logo-light.svg"
+											alt="Selim Solution"
+											className="h-9 w-auto dark:hidden"
+										/>
+										<img
+											src="/selim-logo-white.svg"
+											alt="Selim Solution"
+											className="hidden h-9 w-auto dark:block"
+										/>
 									</div>
 
 									<nav className="relative flex-1 space-y-1 px-3 py-4">
