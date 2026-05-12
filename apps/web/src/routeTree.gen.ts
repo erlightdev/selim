@@ -13,11 +13,32 @@ import { Route as WorksRouteImport } from './routes/works'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SolutionsIndexRouteImport } from './routes/solutions/index'
+import { Route as ComplianceIndexRouteImport } from './routes/compliance/index'
+import { Route as SolutionsTelecomIspsRouteImport } from './routes/solutions/telecom-isps'
+import { Route as SolutionsInsuranceRouteImport } from './routes/solutions/insurance'
+import { Route as SolutionsHealthcareRouteImport } from './routes/solutions/healthcare'
+import { Route as SolutionsGovernmentRouteImport } from './routes/solutions/government'
+import { Route as SolutionsEducationNgosRouteImport } from './routes/solutions/education-ngos'
+import { Route as SolutionsBankingFinanceRouteImport } from './routes/solutions/banking-finance'
+import { Route as ServicesVaptRouteImport } from './routes/services/vapt'
+import { Route as ServicesSocRouteImport } from './routes/services/soc'
+import { Route as ServicesSecurityAwarenessTrainingRouteImport } from './routes/services/security-awareness-training'
+import { Route as ServicesGrcComplianceRouteImport } from './routes/services/grc-compliance'
+import { Route as ServicesEdrRouteImport } from './routes/services/edr'
+import { Route as ServicesDfirRouteImport } from './routes/services/dfir'
+import { Route as ServicesCloudSecurityRouteImport } from './routes/services/cloud-security'
+import { Route as CompliancePciDssRouteImport } from './routes/compliance/pci-dss'
+import { Route as ComplianceNrbDirectivesRouteImport } from './routes/compliance/nrb-directives'
+import { Route as ComplianceNistCsfRouteImport } from './routes/compliance/nist-csf'
+import { Route as ComplianceNiaGuideline2076RouteImport } from './routes/compliance/nia-guideline-2076'
+import { Route as ComplianceIso27001RouteImport } from './routes/compliance/iso-27001'
 
 const WorksRoute = WorksRouteImport.update({
   id: '/works',
@@ -37,6 +58,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsRoute = DownloadsRouteImport.update({
+  id: '/downloads',
+  path: '/downloads',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -64,6 +90,108 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
+  id: '/solutions/',
+  path: '/solutions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplianceIndexRoute = ComplianceIndexRouteImport.update({
+  id: '/compliance/',
+  path: '/compliance/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsTelecomIspsRoute = SolutionsTelecomIspsRouteImport.update({
+  id: '/solutions/telecom-isps',
+  path: '/solutions/telecom-isps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsInsuranceRoute = SolutionsInsuranceRouteImport.update({
+  id: '/solutions/insurance',
+  path: '/solutions/insurance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsHealthcareRoute = SolutionsHealthcareRouteImport.update({
+  id: '/solutions/healthcare',
+  path: '/solutions/healthcare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsGovernmentRoute = SolutionsGovernmentRouteImport.update({
+  id: '/solutions/government',
+  path: '/solutions/government',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsEducationNgosRoute = SolutionsEducationNgosRouteImport.update({
+  id: '/solutions/education-ngos',
+  path: '/solutions/education-ngos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsBankingFinanceRoute = SolutionsBankingFinanceRouteImport.update({
+  id: '/solutions/banking-finance',
+  path: '/solutions/banking-finance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesVaptRoute = ServicesVaptRouteImport.update({
+  id: '/vapt',
+  path: '/vapt',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSocRoute = ServicesSocRouteImport.update({
+  id: '/soc',
+  path: '/soc',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSecurityAwarenessTrainingRoute =
+  ServicesSecurityAwarenessTrainingRouteImport.update({
+    id: '/security-awareness-training',
+    path: '/security-awareness-training',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesGrcComplianceRoute = ServicesGrcComplianceRouteImport.update({
+  id: '/grc-compliance',
+  path: '/grc-compliance',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesEdrRoute = ServicesEdrRouteImport.update({
+  id: '/edr',
+  path: '/edr',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesDfirRoute = ServicesDfirRouteImport.update({
+  id: '/dfir',
+  path: '/dfir',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesCloudSecurityRoute = ServicesCloudSecurityRouteImport.update({
+  id: '/cloud-security',
+  path: '/cloud-security',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const CompliancePciDssRoute = CompliancePciDssRouteImport.update({
+  id: '/compliance/pci-dss',
+  path: '/compliance/pci-dss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplianceNrbDirectivesRoute = ComplianceNrbDirectivesRouteImport.update({
+  id: '/compliance/nrb-directives',
+  path: '/compliance/nrb-directives',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplianceNistCsfRoute = ComplianceNistCsfRouteImport.update({
+  id: '/compliance/nist-csf',
+  path: '/compliance/nist-csf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplianceNiaGuideline2076Route =
+  ComplianceNiaGuideline2076RouteImport.update({
+    id: '/compliance/nia-guideline-2076',
+    path: '/compliance/nia-guideline-2076',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComplianceIso27001Route = ComplianceIso27001RouteImport.update({
+  id: '/compliance/iso-27001',
+  path: '/compliance/iso-27001',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -71,10 +199,31 @@ export interface FileRoutesByFullPath {
   '/case-studies': typeof CaseStudiesRoute
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/works': typeof WorksRoute
+  '/compliance/iso-27001': typeof ComplianceIso27001Route
+  '/compliance/nia-guideline-2076': typeof ComplianceNiaGuideline2076Route
+  '/compliance/nist-csf': typeof ComplianceNistCsfRoute
+  '/compliance/nrb-directives': typeof ComplianceNrbDirectivesRoute
+  '/compliance/pci-dss': typeof CompliancePciDssRoute
+  '/services/cloud-security': typeof ServicesCloudSecurityRoute
+  '/services/dfir': typeof ServicesDfirRoute
+  '/services/edr': typeof ServicesEdrRoute
+  '/services/grc-compliance': typeof ServicesGrcComplianceRoute
+  '/services/security-awareness-training': typeof ServicesSecurityAwarenessTrainingRoute
+  '/services/soc': typeof ServicesSocRoute
+  '/services/vapt': typeof ServicesVaptRoute
+  '/solutions/banking-finance': typeof SolutionsBankingFinanceRoute
+  '/solutions/education-ngos': typeof SolutionsEducationNgosRoute
+  '/solutions/government': typeof SolutionsGovernmentRoute
+  '/solutions/healthcare': typeof SolutionsHealthcareRoute
+  '/solutions/insurance': typeof SolutionsInsuranceRoute
+  '/solutions/telecom-isps': typeof SolutionsTelecomIspsRoute
+  '/compliance/': typeof ComplianceIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -82,10 +231,31 @@ export interface FileRoutesByTo {
   '/case-studies': typeof CaseStudiesRoute
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/works': typeof WorksRoute
+  '/compliance/iso-27001': typeof ComplianceIso27001Route
+  '/compliance/nia-guideline-2076': typeof ComplianceNiaGuideline2076Route
+  '/compliance/nist-csf': typeof ComplianceNistCsfRoute
+  '/compliance/nrb-directives': typeof ComplianceNrbDirectivesRoute
+  '/compliance/pci-dss': typeof CompliancePciDssRoute
+  '/services/cloud-security': typeof ServicesCloudSecurityRoute
+  '/services/dfir': typeof ServicesDfirRoute
+  '/services/edr': typeof ServicesEdrRoute
+  '/services/grc-compliance': typeof ServicesGrcComplianceRoute
+  '/services/security-awareness-training': typeof ServicesSecurityAwarenessTrainingRoute
+  '/services/soc': typeof ServicesSocRoute
+  '/services/vapt': typeof ServicesVaptRoute
+  '/solutions/banking-finance': typeof SolutionsBankingFinanceRoute
+  '/solutions/education-ngos': typeof SolutionsEducationNgosRoute
+  '/solutions/government': typeof SolutionsGovernmentRoute
+  '/solutions/healthcare': typeof SolutionsHealthcareRoute
+  '/solutions/insurance': typeof SolutionsInsuranceRoute
+  '/solutions/telecom-isps': typeof SolutionsTelecomIspsRoute
+  '/compliance': typeof ComplianceIndexRoute
+  '/solutions': typeof SolutionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -94,10 +264,31 @@ export interface FileRoutesById {
   '/case-studies': typeof CaseStudiesRoute
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/downloads': typeof DownloadsRoute
   '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/works': typeof WorksRoute
+  '/compliance/iso-27001': typeof ComplianceIso27001Route
+  '/compliance/nia-guideline-2076': typeof ComplianceNiaGuideline2076Route
+  '/compliance/nist-csf': typeof ComplianceNistCsfRoute
+  '/compliance/nrb-directives': typeof ComplianceNrbDirectivesRoute
+  '/compliance/pci-dss': typeof CompliancePciDssRoute
+  '/services/cloud-security': typeof ServicesCloudSecurityRoute
+  '/services/dfir': typeof ServicesDfirRoute
+  '/services/edr': typeof ServicesEdrRoute
+  '/services/grc-compliance': typeof ServicesGrcComplianceRoute
+  '/services/security-awareness-training': typeof ServicesSecurityAwarenessTrainingRoute
+  '/services/soc': typeof ServicesSocRoute
+  '/services/vapt': typeof ServicesVaptRoute
+  '/solutions/banking-finance': typeof SolutionsBankingFinanceRoute
+  '/solutions/education-ngos': typeof SolutionsEducationNgosRoute
+  '/solutions/government': typeof SolutionsGovernmentRoute
+  '/solutions/healthcare': typeof SolutionsHealthcareRoute
+  '/solutions/insurance': typeof SolutionsInsuranceRoute
+  '/solutions/telecom-isps': typeof SolutionsTelecomIspsRoute
+  '/compliance/': typeof ComplianceIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -107,10 +298,31 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/certifications'
     | '/contact'
+    | '/downloads'
     | '/privacy'
     | '/services'
     | '/terms'
     | '/works'
+    | '/compliance/iso-27001'
+    | '/compliance/nia-guideline-2076'
+    | '/compliance/nist-csf'
+    | '/compliance/nrb-directives'
+    | '/compliance/pci-dss'
+    | '/services/cloud-security'
+    | '/services/dfir'
+    | '/services/edr'
+    | '/services/grc-compliance'
+    | '/services/security-awareness-training'
+    | '/services/soc'
+    | '/services/vapt'
+    | '/solutions/banking-finance'
+    | '/solutions/education-ngos'
+    | '/solutions/government'
+    | '/solutions/healthcare'
+    | '/solutions/insurance'
+    | '/solutions/telecom-isps'
+    | '/compliance/'
+    | '/solutions/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -118,10 +330,31 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/certifications'
     | '/contact'
+    | '/downloads'
     | '/privacy'
     | '/services'
     | '/terms'
     | '/works'
+    | '/compliance/iso-27001'
+    | '/compliance/nia-guideline-2076'
+    | '/compliance/nist-csf'
+    | '/compliance/nrb-directives'
+    | '/compliance/pci-dss'
+    | '/services/cloud-security'
+    | '/services/dfir'
+    | '/services/edr'
+    | '/services/grc-compliance'
+    | '/services/security-awareness-training'
+    | '/services/soc'
+    | '/services/vapt'
+    | '/solutions/banking-finance'
+    | '/solutions/education-ngos'
+    | '/solutions/government'
+    | '/solutions/healthcare'
+    | '/solutions/insurance'
+    | '/solutions/telecom-isps'
+    | '/compliance'
+    | '/solutions'
   id:
     | '__root__'
     | '/'
@@ -129,10 +362,31 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/certifications'
     | '/contact'
+    | '/downloads'
     | '/privacy'
     | '/services'
     | '/terms'
     | '/works'
+    | '/compliance/iso-27001'
+    | '/compliance/nia-guideline-2076'
+    | '/compliance/nist-csf'
+    | '/compliance/nrb-directives'
+    | '/compliance/pci-dss'
+    | '/services/cloud-security'
+    | '/services/dfir'
+    | '/services/edr'
+    | '/services/grc-compliance'
+    | '/services/security-awareness-training'
+    | '/services/soc'
+    | '/services/vapt'
+    | '/solutions/banking-finance'
+    | '/solutions/education-ngos'
+    | '/solutions/government'
+    | '/solutions/healthcare'
+    | '/solutions/insurance'
+    | '/solutions/telecom-isps'
+    | '/compliance/'
+    | '/solutions/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -141,10 +395,24 @@ export interface RootRouteChildren {
   CaseStudiesRoute: typeof CaseStudiesRoute
   CertificationsRoute: typeof CertificationsRoute
   ContactRoute: typeof ContactRoute
+  DownloadsRoute: typeof DownloadsRoute
   PrivacyRoute: typeof PrivacyRoute
-  ServicesRoute: typeof ServicesRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   TermsRoute: typeof TermsRoute
   WorksRoute: typeof WorksRoute
+  ComplianceIso27001Route: typeof ComplianceIso27001Route
+  ComplianceNiaGuideline2076Route: typeof ComplianceNiaGuideline2076Route
+  ComplianceNistCsfRoute: typeof ComplianceNistCsfRoute
+  ComplianceNrbDirectivesRoute: typeof ComplianceNrbDirectivesRoute
+  CompliancePciDssRoute: typeof CompliancePciDssRoute
+  SolutionsBankingFinanceRoute: typeof SolutionsBankingFinanceRoute
+  SolutionsEducationNgosRoute: typeof SolutionsEducationNgosRoute
+  SolutionsGovernmentRoute: typeof SolutionsGovernmentRoute
+  SolutionsHealthcareRoute: typeof SolutionsHealthcareRoute
+  SolutionsInsuranceRoute: typeof SolutionsInsuranceRoute
+  SolutionsTelecomIspsRoute: typeof SolutionsTelecomIspsRoute
+  ComplianceIndexRoute: typeof ComplianceIndexRoute
+  SolutionsIndexRoute: typeof SolutionsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -175,6 +443,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads': {
+      id: '/downloads'
+      path: '/downloads'
+      fullPath: '/downloads'
+      preLoaderRoute: typeof DownloadsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -212,8 +487,173 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/solutions/': {
+      id: '/solutions/'
+      path: '/solutions'
+      fullPath: '/solutions/'
+      preLoaderRoute: typeof SolutionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance/': {
+      id: '/compliance/'
+      path: '/compliance'
+      fullPath: '/compliance/'
+      preLoaderRoute: typeof ComplianceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/telecom-isps': {
+      id: '/solutions/telecom-isps'
+      path: '/solutions/telecom-isps'
+      fullPath: '/solutions/telecom-isps'
+      preLoaderRoute: typeof SolutionsTelecomIspsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/insurance': {
+      id: '/solutions/insurance'
+      path: '/solutions/insurance'
+      fullPath: '/solutions/insurance'
+      preLoaderRoute: typeof SolutionsInsuranceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/healthcare': {
+      id: '/solutions/healthcare'
+      path: '/solutions/healthcare'
+      fullPath: '/solutions/healthcare'
+      preLoaderRoute: typeof SolutionsHealthcareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/government': {
+      id: '/solutions/government'
+      path: '/solutions/government'
+      fullPath: '/solutions/government'
+      preLoaderRoute: typeof SolutionsGovernmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/education-ngos': {
+      id: '/solutions/education-ngos'
+      path: '/solutions/education-ngos'
+      fullPath: '/solutions/education-ngos'
+      preLoaderRoute: typeof SolutionsEducationNgosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/banking-finance': {
+      id: '/solutions/banking-finance'
+      path: '/solutions/banking-finance'
+      fullPath: '/solutions/banking-finance'
+      preLoaderRoute: typeof SolutionsBankingFinanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/vapt': {
+      id: '/services/vapt'
+      path: '/vapt'
+      fullPath: '/services/vapt'
+      preLoaderRoute: typeof ServicesVaptRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/soc': {
+      id: '/services/soc'
+      path: '/soc'
+      fullPath: '/services/soc'
+      preLoaderRoute: typeof ServicesSocRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/security-awareness-training': {
+      id: '/services/security-awareness-training'
+      path: '/security-awareness-training'
+      fullPath: '/services/security-awareness-training'
+      preLoaderRoute: typeof ServicesSecurityAwarenessTrainingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/grc-compliance': {
+      id: '/services/grc-compliance'
+      path: '/grc-compliance'
+      fullPath: '/services/grc-compliance'
+      preLoaderRoute: typeof ServicesGrcComplianceRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/edr': {
+      id: '/services/edr'
+      path: '/edr'
+      fullPath: '/services/edr'
+      preLoaderRoute: typeof ServicesEdrRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/dfir': {
+      id: '/services/dfir'
+      path: '/dfir'
+      fullPath: '/services/dfir'
+      preLoaderRoute: typeof ServicesDfirRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/cloud-security': {
+      id: '/services/cloud-security'
+      path: '/cloud-security'
+      fullPath: '/services/cloud-security'
+      preLoaderRoute: typeof ServicesCloudSecurityRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/compliance/pci-dss': {
+      id: '/compliance/pci-dss'
+      path: '/compliance/pci-dss'
+      fullPath: '/compliance/pci-dss'
+      preLoaderRoute: typeof CompliancePciDssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance/nrb-directives': {
+      id: '/compliance/nrb-directives'
+      path: '/compliance/nrb-directives'
+      fullPath: '/compliance/nrb-directives'
+      preLoaderRoute: typeof ComplianceNrbDirectivesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance/nist-csf': {
+      id: '/compliance/nist-csf'
+      path: '/compliance/nist-csf'
+      fullPath: '/compliance/nist-csf'
+      preLoaderRoute: typeof ComplianceNistCsfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance/nia-guideline-2076': {
+      id: '/compliance/nia-guideline-2076'
+      path: '/compliance/nia-guideline-2076'
+      fullPath: '/compliance/nia-guideline-2076'
+      preLoaderRoute: typeof ComplianceNiaGuideline2076RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance/iso-27001': {
+      id: '/compliance/iso-27001'
+      path: '/compliance/iso-27001'
+      fullPath: '/compliance/iso-27001'
+      preLoaderRoute: typeof ComplianceIso27001RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
+
+interface ServicesRouteChildren {
+  ServicesCloudSecurityRoute: typeof ServicesCloudSecurityRoute
+  ServicesDfirRoute: typeof ServicesDfirRoute
+  ServicesEdrRoute: typeof ServicesEdrRoute
+  ServicesGrcComplianceRoute: typeof ServicesGrcComplianceRoute
+  ServicesSecurityAwarenessTrainingRoute: typeof ServicesSecurityAwarenessTrainingRoute
+  ServicesSocRoute: typeof ServicesSocRoute
+  ServicesVaptRoute: typeof ServicesVaptRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesCloudSecurityRoute: ServicesCloudSecurityRoute,
+  ServicesDfirRoute: ServicesDfirRoute,
+  ServicesEdrRoute: ServicesEdrRoute,
+  ServicesGrcComplianceRoute: ServicesGrcComplianceRoute,
+  ServicesSecurityAwarenessTrainingRoute:
+    ServicesSecurityAwarenessTrainingRoute,
+  ServicesSocRoute: ServicesSocRoute,
+  ServicesVaptRoute: ServicesVaptRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -221,10 +661,24 @@ const rootRouteChildren: RootRouteChildren = {
   CaseStudiesRoute: CaseStudiesRoute,
   CertificationsRoute: CertificationsRoute,
   ContactRoute: ContactRoute,
+  DownloadsRoute: DownloadsRoute,
   PrivacyRoute: PrivacyRoute,
-  ServicesRoute: ServicesRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   TermsRoute: TermsRoute,
   WorksRoute: WorksRoute,
+  ComplianceIso27001Route: ComplianceIso27001Route,
+  ComplianceNiaGuideline2076Route: ComplianceNiaGuideline2076Route,
+  ComplianceNistCsfRoute: ComplianceNistCsfRoute,
+  ComplianceNrbDirectivesRoute: ComplianceNrbDirectivesRoute,
+  CompliancePciDssRoute: CompliancePciDssRoute,
+  SolutionsBankingFinanceRoute: SolutionsBankingFinanceRoute,
+  SolutionsEducationNgosRoute: SolutionsEducationNgosRoute,
+  SolutionsGovernmentRoute: SolutionsGovernmentRoute,
+  SolutionsHealthcareRoute: SolutionsHealthcareRoute,
+  SolutionsInsuranceRoute: SolutionsInsuranceRoute,
+  SolutionsTelecomIspsRoute: SolutionsTelecomIspsRoute,
+  ComplianceIndexRoute: ComplianceIndexRoute,
+  SolutionsIndexRoute: SolutionsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -159,7 +159,7 @@ const collaborationMarkers = [
   {
     label: "Endpoint Secured",
     icon: Pulse,
-    className: "left-[23%] bottom-[13%] hidden md:block",
+    className: "left-[20%] bottom-[13%] hidden md:block",
   },
   {
     label: "AI Monitoring",

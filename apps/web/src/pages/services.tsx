@@ -584,6 +584,50 @@ export default function ServicesPage() {
 					</div>
 				</div>
 			</section>
+
+			{/* Browse all services hub */}
+			<section className="bg-white py-20 dark:bg-zinc-950">
+				<div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div className="mb-10 max-w-2xl">
+						<p className="mb-2 inline-flex rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-300">
+							Browse all services
+						</p>
+						<h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
+							Every service has a dedicated page.
+						</h2>
+						<p className="mt-3 text-zinc-600 dark:text-zinc-300">
+							Deep-dive into scope, process, pricing model and FAQs for each.
+						</p>
+					</div>
+					<div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+						{[
+							{ to: "/services/soc", title: "SOC as a Service", desc: "24/7 SIEM & detection" },
+							{ to: "/services/vapt", title: "VAPT", desc: "Pen testing & assessment" },
+							{ to: "/services/cloud-security", title: "Cloud Security", desc: "AWS · Azure · GCP" },
+							{ to: "/services/edr", title: "EDR", desc: "Endpoint protection" },
+							{ to: "/services/grc-compliance", title: "GRC & Compliance", desc: "ISO · NIA · PCI · NRB" },
+							{ to: "/services/dfir", title: "DFIR", desc: "Forensics & response" },
+							{ to: "/services/security-awareness-training", title: "Awareness Training", desc: "Phishing & staff training" },
+						].map((s) => (
+							<a
+								key={s.to}
+								href={s.to}
+								className="group flex items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-0.5 hover:border-indigo-400 hover:bg-white dark:border-white/10 dark:bg-zinc-900/40 dark:hover:border-indigo-400/40 dark:hover:bg-zinc-900"
+							>
+								<div>
+									<p className="text-sm font-semibold text-zinc-900 dark:text-white">
+										{s.title}
+									</p>
+									<p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
+										{s.desc}
+									</p>
+								</div>
+								<ArrowRight className="mt-1 size-4 shrink-0 text-zinc-400 transition group-hover:translate-x-1 group-hover:text-indigo-500" />
+							</a>
+						))}
+					</div>
+				</div>
+			</section>
 		</main>
 	);
 }

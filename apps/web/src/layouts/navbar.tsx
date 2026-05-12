@@ -37,37 +37,37 @@ const serviceCategories = [
 		items: [
 			{
 				icon: Pulse,
-				href: "/services#soc",
+				href: "/services/soc",
 				label: "SOC as a Service",
 				desc: "24/7 SIEM, threat detection & incident response.",
 			},
 			{
 				icon: Eye,
-				href: "/services#vapt",
+				href: "/services/vapt",
 				label: "VAPT",
 				desc: "Vulnerability assessment & penetration testing.",
 			},
 			{
 				icon: BracketsCurly,
-				href: "/services#cloud",
+				href: "/services/cloud-security",
 				label: "Cloud Security",
 				desc: "AWS, Azure, GCP posture management.",
 			},
 			{
 				icon: Lightning,
-				href: "/services#edr",
+				href: "/services/edr",
 				label: "EDR",
 				desc: "Endpoint detection & response.",
 			},
 			{
 				icon: CubeFocus,
-				href: "/services#grc",
+				href: "/services/grc-compliance",
 				label: "GRC & Compliance",
 				desc: "ISO 27001, NIA 2076, PCI-DSS.",
 			},
 			{
 				icon: ShieldCheck,
-				href: "/services#dfir",
+				href: "/services/dfir",
 				label: "DFIR",
 				desc: "Digital forensics & incident response.",
 			},
@@ -78,37 +78,37 @@ const serviceCategories = [
 		items: [
 			{
 				icon: ShieldCheck,
-				href: "/services#banking",
+				href: "/solutions/banking-finance",
 				label: "Banking & Finance",
 				desc: "Nepal Rastra Bank directives.",
 			},
 			{
 				icon: ShieldCheck,
-				href: "/services#insurance",
+				href: "/solutions/insurance",
 				label: "Insurance",
 				desc: "NIA Guideline 2076 advisory.",
 			},
 			{
 				icon: ShieldCheck,
-				href: "/services#government",
+				href: "/solutions/government",
 				label: "Government",
 				desc: "Public-sector hardening & DDoS defence.",
 			},
 			{
 				icon: ShieldCheck,
-				href: "/services#telecom",
+				href: "/solutions/telecom-isps",
 				label: "Telecom & ISPs",
 				desc: "Carrier-grade monitoring & response.",
 			},
 			{
 				icon: ShieldCheck,
-				href: "/services#healthcare",
+				href: "/solutions/healthcare",
 				label: "Healthcare",
 				desc: "Patient data protection & compliance.",
 			},
 			{
 				icon: ShieldCheck,
-				href: "/services#education",
+				href: "/solutions/education-ngos",
 				label: "Education & NGOs",
 				desc: "Affordable, training-focused security.",
 			},
@@ -117,18 +117,18 @@ const serviceCategories = [
 ] as const;
 
 const complianceLinks = [
-	{ href: "/services#iso27001", label: "ISO 27001" },
-	{ href: "/services#nia2076", label: "NIA Guideline 2076" },
-	{ href: "/services#pci-dss", label: "PCI-DSS" },
-	{ href: "/services#nist", label: "NIST CSF" },
-	{ href: "/services#nrb", label: "NRB Directives" },
+	{ href: "/compliance/iso-27001", label: "ISO 27001" },
+	{ href: "/compliance/nia-guideline-2076", label: "NIA Guideline 2076" },
+	{ href: "/compliance/pci-dss", label: "PCI-DSS" },
+	{ href: "/compliance/nist-csf", label: "NIST CSF" },
+	{ href: "/compliance/nrb-directives", label: "NRB Directives" },
 ] as const;
 
 const resourceLinks = [
 	{ href: "/case-studies", label: "Case Studies" },
-	{ href: "/about#certifications", label: "Certifications" },
+	{ href: "/certifications", label: "Certifications" },
 	{ href: "/about", label: "Brand Story" },
-	{ href: "/contact", label: "Downloads" },
+	{ href: "/downloads", label: "Downloads" },
 ] as const;
 
 const CONTACT_EMAIL = "info@selimsolution.com";
