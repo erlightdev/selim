@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import {
 	ArrowRight,
 	BracketsCurly,
@@ -89,8 +92,24 @@ const certifications = [
 ] as const;
 
 export default function AboutPage() {
+	const [compact, setCompact] = useState<boolean>(() => {
+		try {
+			return typeof window !== "undefined" && localStorage.getItem("aboutCompact") === "1";
+		} catch (e) {
+			return false;
+		}
+	});
+
+	useEffect(() => {
+		try {
+			if (compact) localStorage.setItem("aboutCompact", "1");
+			else localStorage.removeItem("aboutCompact");
+		} catch (e) {
+			// ignore
+		}
+	}, [compact]);
 	return (
-		<main className="bg-zinc-50 font-sans text-zinc-950 selection:bg-indigo-200 selection:text-indigo-950 dark:bg-zinc-950 dark:text-zinc-50">
+		<main className={"bg-zinc-50 font-sans text-zinc-950 selection:bg-indigo-200 selection:text-indigo-950 dark:bg-zinc-950 dark:text-zinc-50"}>
 			<style
 				dangerouslySetInnerHTML={{
 					__html: `
@@ -123,6 +142,15 @@ export default function AboutPage() {
 									<span className="relative inline-flex size-2 rounded-full bg-indigo-200" />
 								</span>
 								About Selim Solution
+							</div>
+							{/* Compact toggle */}
+							<div className="mt-4 flex items-center justify-center gap-3">
+								<button
+									onClick={() => setCompact((v) => !v)}
+									className={"inline-flex items-center gap-2 rounded-full border bg-white/6 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur transition-all"}
+								>
+									{compact ? "Compact view" : "Regular view"}
+								</button>
 							</div>
 							<h1 className="text-balance text-[clamp(2.2rem,8vw,3.4rem)] font-semibold leading-[0.95] tracking-tight">
 								Clarity from the <br className="hidden sm:block" />
@@ -173,14 +201,14 @@ export default function AboutPage() {
 			</section>
 
 			{/* 3. MISSION + VALUES */}
-			<section className="bg-white py-20 sm:py-24 dark:bg-zinc-950">
+			<section className={`bg-white ${compact ? "py-10 sm:py-12" : "py-20 sm:py-24"} dark:bg-zinc-950`}>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
 						<div>
 							<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
 								Our story
 							</div>
-							<h2 className="mt-5 text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
+							<h2 className={`mt-5 text-balance font-semibold leading-[1.1] tracking-tight ${compact ? "text-2xl sm:text-3xl lg:text-4xl" : "text-3xl sm:text-4xl lg:text-5xl"}`}>
 								Named after a lake. Built for a nation.
 							</h2>
 							<p className="mt-6 max-w-xl text-base leading-7 text-zinc-600 dark:text-indigo-100/70">
@@ -227,13 +255,13 @@ export default function AboutPage() {
 			</section>
 
 			{/* 4. WHAT WE COVER */}
-			<section className="bg-zinc-50 py-20 sm:py-24 dark:bg-[#06041a]">
+			<section className={`bg-zinc-50 ${compact ? "py-10 sm:py-12" : "py-20 sm:py-24"} dark:bg-[#06041a]`}>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl text-center">
 						<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
 							Capabilities
 						</div>
-						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+						<h2 className={`mt-5 text-balance font-semibold tracking-tight ${compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"}`}>
 							The seven services we deliver.
 						</h2>
 						<p className="mt-5 text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
@@ -261,14 +289,14 @@ export default function AboutPage() {
 			</section>
 
 			{/* 5. PRINCIPLES */}
-			<section className="bg-white py-20 sm:py-24 dark:bg-zinc-950">
+			<section className={`bg-white ${compact ? "py-10 sm:py-12" : "py-20 sm:py-24"} dark:bg-zinc-950`}>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 						<div>
 							<div className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
 								How we think
 							</div>
-							<h2 className="mt-5 max-w-2xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+							<h2 className={`mt-5 max-w-2xl text-balance font-semibold tracking-tight ${compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"}`}>
 								Principles that shape every release.
 							</h2>
 						</div>
@@ -304,7 +332,7 @@ export default function AboutPage() {
 			</section>
 
 			{/* 6. CERTIFICATIONS */}
-			<section id="certifications" className="bg-zinc-50 py-20 sm:py-24 dark:bg-[#06041a]">
+			<section id="certifications" className={`bg-zinc-50 ${compact ? "py-10 sm:py-12" : "py-20 sm:py-24"} dark:bg-[#06041a]`}>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
 						<div>
@@ -317,7 +345,7 @@ export default function AboutPage() {
 									Certifications
 								</div>
 							</div>
-							<h2 className="mt-5 max-w-md text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+							<h2 className={`mt-5 max-w-md text-balance font-semibold tracking-tight ${compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"}`}>
 								Credentials our team carries.
 							</h2>
 							<p className="mt-5 max-w-md text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
@@ -347,14 +375,14 @@ export default function AboutPage() {
 			</section>
 
 			{/* 7. TEAM */}
-			<section className="bg-white py-20 sm:py-24 dark:bg-zinc-950">
+			<section className={`bg-white ${compact ? "py-10 sm:py-12" : "py-20 sm:py-24"} dark:bg-zinc-950`}>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl text-center">
 						<div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-white/55">
 							<Users className="size-3.5" weight="duotone" />
 							Our team
 						</div>
-						<h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+						<h2 className={`mt-5 text-balance font-semibold tracking-tight ${compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"}`}>
 							Kathmandu-based analysts, auditors and ethical hackers.
 						</h2>
 						<p className="mt-5 text-base leading-7 text-zinc-600 dark:text-indigo-100/65">
