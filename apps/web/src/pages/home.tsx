@@ -17,9 +17,68 @@ import {
 	Sparkle,
 	Strategy,
 	TrendUp,
+	Globe,
+	DeviceMobile,
+	Cloud,
+	Desktop,
+	WifiHigh,
+	Cpu,
+	Rocket,
 } from "@phosphor-icons/react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { TestimonialsSection } from "@/components/testimonial-v2";
+
+const servicesSlider = [
+	{
+		icon: Pulse,
+		title: "SOC as a Service",
+		text: "24/7 SIEM monitoring, threat detection and incident response from our Kathmandu SOC.",
+		href: "/services/soc-as-a-service",
+		tag: "01 · Managed",
+	},
+	{
+		icon: CubeFocus,
+		title: "VAPT",
+		text: "Vulnerability assessment and penetration testing across web, mobile, network, APIs and cloud.",
+		href: "/services/vapt",
+		tag: "02 · Offensive",
+	},
+	{
+		icon: Code,
+		title: "Cloud Security",
+		text: "AWS, Azure and GCP posture management — misconfigurations caught before attackers find them.",
+		href: "/services/cloud-security",
+		tag: "03 · Posture",
+	},
+	{
+		icon: CirclesFour,
+		title: "EDR",
+		text: "Endpoint detection and response — every laptop, server and device watched in real time.",
+		href: "/services/edr",
+		tag: "04 · Endpoint",
+	},
+	{
+		icon: BracketsCurly,
+		title: "GRC & Compliance",
+		text: "ISO 27001, NIA 2076, PCI-DSS and Nepal Rastra Bank directives — advisory, audit and evidence.",
+		href: "/services/grc-compliance",
+		tag: "05 · Compliance",
+	},
+	{
+		icon: FlowArrow,
+		title: "DFIR",
+		text: "Digital forensics and incident response — rapid containment, root-cause analysis and recovery.",
+		href: "/services/dfir",
+		tag: "06 · Response",
+	},
+	{
+		icon: Sparkle,
+		title: "Awareness Training",
+		text: "Phishing simulations and tailored security awareness training that lifts your weakest link.",
+		href: "/services/security-awareness-training",
+		tag: "07 · People",
+	},
+] as const;
 
 // --- DATA ---
 const clientLogos = [
@@ -273,6 +332,84 @@ const everythingItems = [
 		text: "On-call forensics retainer with rapid containment, root-cause analysis and post-incident hardening.",
 	},
 ] as const;
+
+function ServicesScrollSlider() {
+	const trackRef = useRef<HTMLDivElement | null>(null);
+
+	const scrollBy = (dir: 1 | -1) => {
+		const el = trackRef.current;
+		if (!el) return;
+		const card = el.querySelector<HTMLElement>("[data-card]");
+		const step = card ? card.offsetWidth + 20 : el.clientWidth * 0.85;
+		el.scrollBy({ left: step * dir, behavior: "smooth" });
+	};
+
+	return (
+		<div className="relative">
+			<div
+				ref={trackRef}
+				className="services-track flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-6 py-6 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent),linear-gradient(to_bottom,transparent,black_8%,black_92%,transparent)] [mask-composite:intersect] [-webkit-mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent),linear-gradient(to_bottom,transparent,black_8%,black_92%,transparent)] [-webkit-mask-composite:source-in]"
+			>
+				{servicesSlider.map(({ icon: Icon, ...s }) => (
+					<a
+						key={s.title}
+						data-card
+						href={s.href}
+						className="group relative flex shrink-0 basis-[85%] snap-start flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_30px_80px_-40px_rgba(79,70,229,0.45)] sm:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:backdrop-blur dark:hover:border-indigo-400/40 dark:hover:bg-white/[0.07] dark:hover:shadow-[0_30px_80px_-40px_rgba(79,70,229,0.7)]"
+					>
+						<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(79,70,229,0.12),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:bg-[radial-gradient(circle_at_15%_0%,rgba(79,70,229,0.18),transparent_55%)]" />
+						<div className="relative flex items-start justify-between gap-4">
+							<div className="flex size-12 items-center justify-center rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-600 dark:border-indigo-400/30 dark:bg-indigo-500/15 dark:text-indigo-200 dark:shadow-inner dark:shadow-indigo-500/10">
+								<Icon className="size-6" weight="duotone" />
+							</div>
+							<span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest dark:text-indigo-200/55">
+								{s.tag}
+							</span>
+						</div>
+						<h3 className="relative mt-6 font-semibold text-lg text-zinc-950 tracking-tight dark:text-white">
+							{s.title}
+						</h3>
+						<p className="relative mt-2 flex-1 text-sm text-zinc-600 leading-relaxed dark:text-indigo-100/65">
+							{s.text}
+						</p>
+						<div className="relative mt-6 inline-flex items-center gap-1.5 font-semibold text-indigo-600 text-sm transition-transform group-hover:translate-x-0.5 dark:text-indigo-300">
+							Learn more
+							<ArrowRight className="size-4" />
+						</div>
+					</a>
+				))}
+			</div>
+
+			<div className="mt-2 flex items-center justify-end gap-3">
+				<button
+					type="button"
+					onClick={() => scrollBy(-1)}
+					aria-label="Previous services"
+					className="inline-flex size-11 items-center justify-center rounded-full border border-zinc-200 bg-white text-indigo-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-indigo-600 hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-indigo-200 dark:shadow-none dark:backdrop-blur dark:hover:border-indigo-400/50 dark:hover:bg-indigo-600 dark:hover:text-white"
+				>
+					<ArrowRight className="size-4 rotate-180" weight="bold" />
+				</button>
+				<button
+					type="button"
+					onClick={() => scrollBy(1)}
+					aria-label="Next services"
+					className="inline-flex size-11 items-center justify-center rounded-full border border-zinc-200 bg-white text-indigo-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-indigo-600 hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-indigo-200 dark:shadow-none dark:backdrop-blur dark:hover:border-indigo-400/50 dark:hover:bg-indigo-600 dark:hover:text-white"
+				>
+					<ArrowRight className="size-4" weight="bold" />
+				</button>
+			</div>
+
+			<style
+				dangerouslySetInnerHTML={{
+					__html: `
+						.services-track::-webkit-scrollbar { display: none; }
+						.services-track { -ms-overflow-style: none; scrollbar-width: none; }
+					`,
+				}}
+			/>
+		</div>
+	);
+}
 
 function EverythingInOneSection() {
 	const [open, setOpen] = useState(0);
@@ -922,6 +1059,115 @@ export default function HomePage() {
 									{text}
 								</p>
 							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* 3.7 SERVICES SLIDER */}
+			<section className="relative overflow-hidden bg-[#f4f7fb] py-16 text-zinc-950 sm:py-20 dark:bg-[#08051f] dark:text-white">
+				<div className="pointer-events-none absolute -top-32 right-0 size-[28rem] rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-600/20" />
+				<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(79,70,229,0.05)_1px,transparent_1px),linear-gradient(0deg,rgba(79,70,229,0.04)_1px,transparent_1px)] bg-[size:3rem_3rem] dark:bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
+
+				<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+						<div className="max-w-2xl">
+							<div className="inline-flex items-center gap-2 font-semibold text-indigo-600 text-xs uppercase tracking-[0.22em] dark:text-indigo-300">
+								<span className="size-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400" />
+								Services
+							</div>
+							<h2 className="mt-4 font-semibold text-3xl tracking-tight sm:text-4xl">
+								One Kathmandu team. Every layer of defence.
+							</h2>
+							<p className="mt-3 text-base text-zinc-600 leading-relaxed dark:text-indigo-100/70">
+								From SOC monitoring to forensics — slide through what we deliver
+								across managed, offensive and compliance practices.
+							</p>
+						</div>
+						<a
+							href="/services"
+							className="group inline-flex h-11 w-fit shrink-0 items-center gap-2 self-start rounded-xl border border-zinc-200 bg-white px-5 font-semibold text-sm text-zinc-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:text-indigo-700 sm:self-end dark:border-white/15 dark:bg-white/5 dark:text-white dark:shadow-none dark:backdrop-blur dark:hover:border-indigo-400/40 dark:hover:bg-white/10 dark:hover:text-white"
+						>
+							View all services
+							<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+						</a>
+					</div>
+
+					<ServicesScrollSlider />
+				</div>
+			</section>
+
+			{/* 3.8 OUR OFFERING — COVERAGE SURFACES */}
+			<section className="relative overflow-hidden bg-white py-16 text-zinc-950 sm:py-20 dark:bg-[#08051f] dark:text-white">
+				<div className="pointer-events-none absolute top-1/2 -right-10 hidden h-96 w-96 -translate-y-1/2 opacity-40 lg:block dark:opacity-30">
+					<svg viewBox="0 0 400 400" fill="none" className="size-full">
+						<g stroke="currentColor" strokeWidth="1" className="text-indigo-400/60 dark:text-indigo-400/45">
+							<path d="M0 80 L120 80 L160 120 L260 120 L300 80 L400 80" />
+							<path d="M0 180 L80 180 L120 220 L240 220 L280 180 L400 180" />
+							<path d="M0 280 L140 280 L180 240 L300 240 L340 280 L400 280" />
+							<path d="M60 0 L60 60 L100 100 L100 200" />
+							<path d="M200 0 L200 80 L240 120 L240 240" />
+							<path d="M340 0 L340 60 L300 100 L300 220" />
+						</g>
+						<g fill="currentColor" className="text-indigo-500 dark:text-indigo-400">
+							<circle cx="120" cy="80" r="3" />
+							<circle cx="260" cy="120" r="3" />
+							<circle cx="240" cy="220" r="3" />
+							<circle cx="180" cy="240" r="3" />
+							<circle cx="100" cy="200" r="3" />
+							<circle cx="300" cy="220" r="3" />
+						</g>
+					</svg>
+				</div>
+				<div className="pointer-events-none absolute -bottom-32 -left-20 size-[24rem] rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-600/15" />
+
+				<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+						<div className="max-w-2xl">
+							<div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 font-semibold text-indigo-700 text-xs uppercase tracking-[0.22em] dark:border-indigo-400/30 dark:bg-indigo-500/15 dark:text-indigo-200">
+								<span className="size-1.5 rounded-full bg-indigo-500 dark:bg-indigo-300" />
+								Our Offering
+							</div>
+							<h2 className="mt-5 font-semibold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
+								Enhance and pioneer using
+								<br className="hidden sm:block" /> technology trends.
+							</h2>
+						</div>
+						<a
+							href="/services"
+							className="group inline-flex h-12 w-fit shrink-0 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 font-semibold text-sm text-white shadow-[0_20px_50px_-20px_rgba(79,70,229,0.9)] transition-all hover:-translate-y-0.5 hover:bg-indigo-500"
+						>
+							Explore More
+							<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+						</a>
+					</div>
+
+					<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+						{[
+							{ icon: Globe, label: "Web" },
+							{ icon: DeviceMobile, label: "Mobile" },
+							{ icon: Cloud, label: "Cloud" },
+							{ icon: Desktop, label: "Endpoint" },
+							{ icon: WifiHigh, label: "Network" },
+							{ icon: Cpu, label: "IoT" },
+						].map(({ icon: Icon, label }) => (
+							<a
+								key={label}
+								href="/services"
+								className="group relative flex flex-col items-center pt-9"
+							>
+								<div className="absolute top-0 z-10 flex size-16 items-center justify-center rounded-full border border-indigo-200 bg-white shadow-[0_16px_40px_-18px_rgba(79,70,229,0.45)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-indigo-500 group-hover:bg-indigo-600 dark:border-indigo-400/30 dark:bg-[#0d092d] dark:shadow-[0_16px_40px_-18px_rgba(79,70,229,0.8)] dark:group-hover:border-indigo-400">
+									<Icon
+										className="size-7 text-indigo-600 transition-colors group-hover:text-white dark:text-indigo-300"
+										weight="duotone"
+									/>
+								</div>
+								<div className="flex h-28 w-full items-end justify-center rounded-2xl border border-zinc-200 bg-zinc-50 pb-5 transition-all duration-300 group-hover:border-indigo-200 group-hover:bg-white dark:border-white/10 dark:bg-white/[0.03] dark:backdrop-blur dark:group-hover:border-indigo-400/40 dark:group-hover:bg-white/[0.06]">
+									<span className="font-semibold text-base text-zinc-950 tracking-tight dark:text-white">
+										{label}
+									</span>
+								</div>
+							</a>
 						))}
 					</div>
 				</div>
